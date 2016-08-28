@@ -1,0 +1,42 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: ELEC548 - Neural Signal Processing and Machine Learning
+email: caleb.kemere@rice.edu
+description: > # this means to ignore newlines until "baseurl:"
+  The activity of a complex network of billions of interconnected neurons underlies our ability
+  to sense, represent and store the details of experienced life, and enables us to interact
+  with our environment and other organisms. Modern neuroscience techniques enable us to access
+  this activity, and thus to begin to understand the processes whereby individual neurons work
+  together to enable complex behaviors. In order to increase this understanding and to design
+  biomedical systems which might therapeutically interact with neural circuits, advanced
+  statistical signal processing and machine learning approaches are required. This class will
+  cover a range of techniques and their application to basic neuroscience and neural
+  interfaces.
+  This class will cover a range of techniques and their application to basic neuroscience and
+  neural interfaces. Topics include an introduction to neurobiology and electrophysiology for
+  engineers, point processes, dimensionality reduction, classification/clustering, spectral
+  analysis, and genetic and optical tools for interrogating neural circuits. Neuroscience
+  applications include modeling action potentials and firing rates, automated analysis of
+  activity-dependent fluorescence imaging data, decoding, spike sorting, and field potential
+  analysis. This course is open to students with no prior neurobiology coursework.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://elec548.github.io" # the base hostname & protocol for your site
+#twitter_username: jekyllrb
+#github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+theme: minima
