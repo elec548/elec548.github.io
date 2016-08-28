@@ -39,15 +39,14 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Time** -- Tuesdays/Thursdays 9:25-10:40 AM
 
-**Prerequisites** -- Basic circuits (ELEC 242 or equivalent), Probability (ELEC 303 or
-equivalent), Linear algebra (Math 355 or equivalent), Matlab will be used for many of the
-homework assignments so some familiarity with it will be useful
+**Canvas** -- [https://canvas.rice.edu/courses/1080](https://canvas.rice.edu/courses/1080)
 
 **Syllabus** -- [here](/syllabus.html)
 
 **Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/quzu5x79gktfww5/AACRFtncDVpCtgqkZFZmD0TWa?dl=0)
 
-**Homework Assignments:**
+**Assignments:**
+
   + [Homework 1](/Assignments/hw1.html)
 
 **Useful References / Final Project Papers:**
