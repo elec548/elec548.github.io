@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Homework 1
+title: Homework 2
 ---
 
 ## Homework 2 (120 pts)
