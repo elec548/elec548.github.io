@@ -50,14 +50,16 @@ analysis. This course is open to students with no prior neurobiology coursework.
   + [Homework 1](/Assignments/hw1.html)
   + [Homework 2](/Assignments/hw2.html)
 
-**Useful References / Final Project Papers:**
+[**Useful References / Final Project Papers**](Resources/)
 
 **Online Resources**
+
   + [Interactive Membrane Potential Simulator](http://www.nernstgoldman.physiology.arizona.edu/)
   + [Interactive Simulator for the Hodgkin Huxley Model Neuron](http://www.afodor.net/HHModel.htm)
   + [Computational Cognition Cheat Sheets](http://www.bcs.rochester.edu/people/robbie/jacobslab/cheat_sheets.html)
 
 **Previous versions of the class**
+
   + [2015](http://dsp.rice.edu/courses/elec548)
 
 </div>
