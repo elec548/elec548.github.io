@@ -104,15 +104,16 @@ of electrophysiology as well as providing some “warmup” Python work._
    variable, where the smoothing is done using a 100 point moving average filter. After
    smoothing, the input should have mean \\(\mu\\) and standard deviation \\(\sigma\\), where
    \\(\mu \in \lbrace 0, 0.05, 0.1, 0.15, 0.2\rbrace \, \mu A/mm^2\\) and \\(\sigma \in \lbrace
-   0, 0.01, 0.05, 0.1 \rbrace \, \mu A/mm^2\\). You will probably want to use the functions
-   `np.random.rand` (for the Gaussian) and `np.conv` (to calculate the smoothed signal, though
-   note that you'll need to truncate the convolution output to be the right length). Recall
-   that if \\(y \sim \mathcal{N}(0, \sigma^2)\\), then \\(\text{mean}(ay + b) = b\\) and
-   \\(\text{var}(ay + b) = a^2\sigma^2\\). 
+   0, 0.01, 0.05, 0.1 \rbrace \, \mu A/mm^2\\).  For each pair of parameters, construct 25
+   input current profiles. (For the zero variability input, it is only necessary to do one.)
+   For each of these 3 x 5 x 25 + 5 = 380 input "experiments", count the number of action potentials produced by
+   the neuron. Make a plot showing the the average number of generated spikes as a function of
+   the mean depolarization for each of the standard deviations (i.e., 4 lines)? How does the
+   variance in the number of spikes per trial change with these different parameters? 
+   
+   **Implementation Hint:** You will probably want to use the functions `np.random.rand` (for the Gaussian)
+   and `np.conv` (to calculate the smoothed signal remembering that you'll need to truncate the
+   convolution output to be the right length). Recall that if \\(y \sim \mathcal{N}(0,
+   \sigma^2)\\), then \\(\text{mean}(ay + b) = b\\) and \\(\text{var}(ay + b) = a^2\sigma^2\\). 
 
-   For each pair of parameters, construct 25 input current profiles. (For the zero variability
-   input, it is only necessary to do one.)  For each of these 380 input "experiments", count the
-   number of action potentials produced by the neuron. Make a plot showing the the average number of
-   generated spikes as a function of the mean depolarization for each of the standard
-   deviations (i.e., 4 lines)? How does the variance in the number of spikes per trial change
-   with these different parameters? (25 pts)
+   (25 pts)
