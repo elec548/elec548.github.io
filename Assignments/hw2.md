@@ -112,7 +112,7 @@ of electrophysiology as well as providing some “warmup” Python work._
    lines)? How does the variance in the number of spikes per trial change with these different
    parameters? 
    
-   **Implementation Hint:** You will probably want to use the functions `np.random.rand` (for the Gaussian)
+   **Implementation Hint:** You will probably want to use the functions `np.random.randn` (for the Gaussian)
    and `np.conv` (to calculate the smoothed signal remembering that you'll need to truncate the
    convolution output to be the right length). Recall that if $$ y \sim \mathcal{N}(0,
    \sigma^2) $$, then $$ \text{mean}(ay + b) = b $$ and $$ \text{var}(ay + b) = a^2\sigma^2 $$.
