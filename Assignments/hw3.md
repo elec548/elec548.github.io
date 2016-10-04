@@ -23,7 +23,7 @@ point processes in general and the Poisson process in particular._
    **a.** The raw spike train recorded on the electrode is a Poisson process. Show
    that it has an exponential ISI distribution. (_Hint: What is Pr(combined
    signal > t), which is 1 – CDF, in terms of the same quantity for each of the
-   neurons?)
+   neurons?_)
 
    **b.** What is the rate of this Poisson process?
 
@@ -35,9 +35,9 @@ point processes in general and the Poisson process in particular._
    Connor-Stevens neuron from the previous homework compare to a Poisson process.
    Use the Connor-Stevens neuron with smoothed--Gaussian random input as in HW2
    (but with new parameters). Generate 100 trials per parameter combination rather
-   than 25. For the mean input, use {0.05 μA, 0.1 μA}; for the variance, use
-   {0.2 μA , 0.5 μA). Under what input conditions (mean and variance) are the
-   spikes that are produced “most” like a Poisson process? (Show spike count
-   and ISI distributions, comparing data to expected distributions.) Under what
-   input conditions are the spikes “least” like a Poisson process?
+   than 25. For the mean input, use {0.1 μA, 0.2 μA}; for the standard deviation (after
+   smoothing!), use {0.2 μA , 0.5 μA). Under what input conditions (mean and variance) are the
+   spikes that are produced “most” like a Poisson process? (Show spike count and ISI
+   distributions, comparing data to expected distributions.) Under what input conditions are
+   the spikes “least” like a Poisson process?
 
