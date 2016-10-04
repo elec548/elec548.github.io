@@ -6,8 +6,13 @@ group: navigation
 
 ## Useful pages
 
+**Course Notes**
+
+  + [Byrons Review of Point
+  Processes](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/PoissonNotes/PoissProcRev.pdf)
 
 **Online Resources**
+
   + [Connor and Stevens _J Neurophysiology_, 1971](Connor, Stevens - Prediction of repetitive firing behaviour from voltage clamp data on an isolated neurone soma. - 1971.pdf)
   + [CST Neuron pages from TCN](CST Neuron Pages from Dayan and Abbot.pdf)
   + [Foust Axon Simulation](Foust et al. - Somatic membrane potential and Kv1 channels control spike repolarization in cortical axon collaterals and presynaptic bou.pdf)
