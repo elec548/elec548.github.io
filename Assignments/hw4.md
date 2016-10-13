@@ -23,25 +23,34 @@ point processes in general and the Poisson process in particular._
    the spikes from a synthetic neuron.
 
 
-     **a.** _Model Comparison (10 pts)_ Look at the data in the file problem1Aneuron.npy...
-     [SpikeTimes,SpikeCount] = problem1Aneuron (NumberOfTrials) generates individual trials
-     containing one second of neural activity. It returns two values, SpikeTimes, the time of
-     each recorded action potential, and SpikeCount, which as a convenience is the number of
-     spikes, or just the length of the SpikeTimes vector. In problem1a.mat, you’ll find the
-     variables GaussianMean, GaussianVariance, and PoissonRate, corresponding to a Gaussian
-     model of spike counts or a Poisson model for spike counts. Gather data from many trials
-     using the problem1Aneuron function and evaluate which set of parameters best describes the
-     data. (_Hint: You should calculate the likelihood of each model. In other words, calculate
-     the probability of, e.g., data from 1000 trials of the simulated data given one model or
-     the other?_)
+     **a.** _Model Comparison (10 pts)_ Look at the data in the numpy data file
+     [hw4problem1A.npy](hw4problem1A.npy). This file contains two variables, `SpikeTimes` and `SpikeCounts`.
+     `SpikeTimes` is a list of spike times recorded in one experimental trial (each trial is 1
+     s for simplicity) from a neuron.  For each trial, for convenience, the number of spikes
+     is given in the corresponding element of `SpikeCount`. You can load the data into python
+     using `numpy.load()`:
 
-     **b.** _Point Processes (10 pts)_ Consider the actual spike times returned by
-     problem1Aneuron (given in the vector SpikeTimes). If you were to model this neuron with a
-     Poisson process, would you use a constant or a time-varying rate over the 1 second window?
-     (Justify your answer with a plot.)
+   ```python
+   import numpy as np
+   [SpikeTimes, SpikeCount] = np.load('hw4problem1A.npy')
+   ```
+     
+     Consider two possible models for the number of spikes per trial: a Gaussian distribution
+     with mean 10.2 and variance 9.5 and a Poisson distribution with rate 9.8.
+     Using the data provided evaluate which set of parameters best describes the data. (_Hint:
+     You should calculate the likelihood of each model. In other words, calculate the
+     probability of, e.g., data from 1000 trials of the simulated data given one model or
+     the other?_) Now split the data into training and validation sets, use the training sets
+     to train a Gaussian model and a Poisson model, and use the validation set to assess which
+     model fitst the data best.
+
+     **b.** _Point Processes (10 pts)_ Consider the actual spike times from **(a)**
+     (given in the SpikeTimes list). If you were to model this neuron with a Poisson process,
+     would you use a constant or a time-varying rate over the 1 second window?
+     (Justify your answer with one or more plots.)
 
      **c.** _Fano Factor / ISI Distribution (10 pts)_ Consider the spike times returned by a
-     different neuron, [SpikeTimes,SpikeCount] = problem1Cneuron(NumberOfTrials)
+     different neuron whos data are given in [hw4problem1C.npy](hw4problem1C.npy)
      If you were to model this neuron with a Poisson process, would you use a constant or a
      time- varying rate? Do the variance and mean of the count distribution have the
      relationship you would expect for a Poisson process? What physiological process might you
