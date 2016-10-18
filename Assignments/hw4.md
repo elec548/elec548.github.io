@@ -59,7 +59,7 @@ point processes in general and the Poisson process in particular._
      would you use a constant or a time-varying rate over the 1 second window?
      (Justify your answer with one or more plots.)
 
-     **c.** _Fano Factor / ISI Distribution (10 pts)_ Consider the spike times returned by a
+     **d.** _Fano Factor / ISI Distribution (10 pts)_ Consider the spike times returned by a
      different neuron whos data are given in [hw4problem1C.npy](hw4problem1C.npy)
      If you were to model this neuron with a Poisson process, would you use a constant or a
      time- varying rate? Do the variance and mean of the count distribution have the
