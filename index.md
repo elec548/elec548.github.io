@@ -45,6 +45,13 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/quzu5x79gktfww5/AACRFtncDVpCtgqkZFZmD0TWa?dl=0)
 
+**Course Notes**
+
+  + [Byrons Review of Point
+  Processes](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/PoissonNotes/PoissProcRev.pdf)
+  + [Notes on Classification
+  ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/Classification/Classification.pdf)
+
 **Assignments:**
 
   + [Homework 1](/Assignments/hw1.html)
