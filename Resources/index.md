@@ -10,6 +10,8 @@ group: navigation
 
   + [Byrons Review of Point
   Processes](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/PoissonNotes/PoissProcRev.pdf)
+  + [Notes on Classification
+  ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/Classification/Classification.pdf)
 
 **Online Resources**
 
