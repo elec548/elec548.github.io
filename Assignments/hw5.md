@@ -21,8 +21,13 @@ i and neuron j are given in r(i).unit(j).spikeTimes (in ms relative to trial sta
 relevant members of the structure for this homework assignment are: r(i).timeTouchHeld (the
 time the reach target appears and movement planning nominally begins), r(i).timeGoCue (the time
 the animal is cued to move and planning nominally ends), r(i).timeTargetAcquire (the time
-movement ends). There are 8 different reach targets (locations in the vector targets); the
-target index for each trial is in the vector cfr.
+movement ends). A big part of all three parts of this assignment will be writing code that
+creates _spike count vectors_. These will be vectors of size $$Nx1$$, where $$N$$ is the total
+number of neurons (i.e., 190). All of the classification will be on these vectors, and you
+should combine across neurons _by taking the product of probabilities_ (not by doing anything
+that would collapse across neurons or mix their information). There are 8 different reach
+targets (locations in the vector targets); the target index for each trial is in the vector
+`cfr`.
 
 ### Questions
 
