@@ -34,13 +34,15 @@ target index for each trial is in the vector cfr.
    length for different trials). Randomly choose 50 trials per target to be a set of training data
    (400 trials total). The remaining trials will be used for testing (“test data”). We can
    describe the number of spikes that a neuron produces in each window (vector of neural counts as
-   $$\mathbf{n}_{plan}$$ and $$\mathbf{n}_{move}$$) using a wide variety of random process
+   $$\mathbf{n}_{plan}$$ and $$\mathbf{n}_{move}$$, where $$\mathbf{n} \ismember
+   \mathbb{R}^N$$, where $$N$$ is the number of neurons) using a wide variety of random process
    models. Use the training data to estimate the parameters of a target- direction-dependent
    vector Poisson process, i.e., $$\Pr(\mathbf{n} \mid \mathrm{target}_k) \sim
-   \mathrm{Poisson}(\boldsymbol{\lambda}_k)$$. For each of remaining test trials estimate the maximum
-   likelihood reach target. What is the overall decoding accuracy (i.e., what fraction of
-   trials are decoded correctly) using only the data in the plan window? Using only data in the
-   movement window? Combining plan and movement data?
+   \mathrm{Poisson}(\boldsymbol{\lambda}_k) = \prod_{n=1}^N \mathrfm{Poisson}(\lambda_{k,n})$$.
+   For each of remaining test trials estimate the maximum likelihood reach target. What is the
+   overall decoding accuracy (i.e., what fraction of trials are decoded correctly) using only
+   the data in the plan window? Using only data in the movement window? Combining plan and
+   movement data?
 
 
 2. _Amount of plan data (40 pts)_
