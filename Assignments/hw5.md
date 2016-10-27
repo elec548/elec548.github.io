@@ -39,10 +39,12 @@ target index for each trial is in the vector cfr.
    models. Use the training data to estimate the parameters of a target- direction-dependent
    vector Poisson process, i.e., $$\Pr(\mathbf{n} \mid \mathrm{target}_k) \sim
    \mathrm{Poisson}(\boldsymbol{\lambda}_k) = \prod_{n=1}^N \mathrm{Poisson}(\lambda_{k,n})$$.
-   For each of remaining test trials estimate the maximum likelihood reach target. What is the
-   overall decoding accuracy (i.e., what fraction of trials are decoded correctly) using only
-   the data in the plan window? Using only data in the movement window? Combining plan and
-   movement data?
+   In other words, calculate a Poisson model for _each neuron_ and class - the rate for a class
+   will be a vector the size of the number of neurons.  For each of remaining test trials
+   estimate the maximum likelihood reach target (do it in log space!). What is the overall
+   decoding accuracy (i.e., what fraction of trials are decoded correctly) using only the data
+   in the plan window? Using only data in the movement window?  Combining plan and movement
+   data?
 
 
 2. _Amount of plan data (40 pts)_
@@ -51,22 +53,24 @@ target index for each trial is in the vector cfr.
      than the full plan period. Generate new models for plan periods of increasing size (50 ms to
      750 ms in 50 ms increments, where all plan windows begin at the target onset time). Using
      maximum likelihood estimation, decode the reach target for the test data using these different
-     sized windows of neural data. Plot the decoding accuracy as a function of the size of the
-     decoding window. Briefly describe what you see. (20 pts)
+     sized windows of neural data. (Both train and test with these window sizes!) Plot the
+     decoding accuracy as a function of the size of the decoding window. Briefly describe what
+     you see. (20 pts)
 
      **b.** Now, instead of using an increasing window size, use a constant 200 ms window, but slide
-     the window start time from target onset (“0”) to 550 ms after target onset. Generate new models
-     for each window location and decode the reach target for the test data. Plot the decoding
-     accuracy as a function of the temporal location of the decoding window. Briefly describe what
-     you see. (20 pts)
+     the window start time from target onset (“0”) to 550 ms after target onset (use 50 ms
+     steps). Generate new models for each window location and decode the reach target for the
+     test data. Plot the decoding accuracy as a function of the temporal location of the
+     decoding window. Briefly describe what you see. (20 pts)
 
 3. _Number of neurons (30 pts)_
 
      Using your model from (1), you decoded maximum likelihood targets using all 190 neurons. Now,
      perform a “neuron dropping analysis”. Starting with your full model, randomly eliminate neurons
      and evaluate decoding accuracy in the reduced data set. Eliminate between 20 and 180 neurons
-     (by 20s – so decode using 10:20:190 neurons) – average each point (number of neurons) by
-     randomly choosing neurons to be dropped 20 times. Plot decoding accuracy as a function of the
-     number of neurons available to the decoder. Briefly describe what you see?
+     (by 20s – so decode using between 10 and 190 neurons in steps of 20) – average each point
+     (number of neurons) by randomly choosing neurons to be dropped 20 times. Plot decoding
+     accuracy as a function of the number of neurons available to the decoder. Briefly describe
+     what you see?
  
 
