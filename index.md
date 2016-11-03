@@ -51,6 +51,8 @@ analysis. This course is open to students with no prior neurobiology coursework.
   Processes](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/PoissonNotes/PoissProcRev.pdf)
   + [Notes on Classification
   ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/Classification/Classification.pdf)
+  + [Notes on Mixture Models
+  ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/MixtureModels/MixtureModels.pdf)
 
 **Assignments:**
 
@@ -74,4 +76,3 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 </div>
 </div>
-
