@@ -34,23 +34,23 @@ point processes in general and the Poisson process in particular._
    import numpy as np
    [SpikeTimes, SpikeCount] = np.load('hw4problem1A.npy')
    ```
-     
-     Consider two possible models for the number of spikes per trial: 
-   
+
+     Consider two possible models for the number of spikes per trial:
+
    | Model | Parameters |
    |:-------|:------|
    | Gaussian | Mean = 10.2, Variance = 9.5  |
    | Poisson  | Rate = 9.8  |
    |--------------------|
-     
+
      Using the data provided evaluate which set of parameters best describes the data. (_Hint:
      You should calculate the likelihood of each model. In other words, calculate the
      probability of, e.g., data from 1000 trials of the simulated data given one model or
-     the other?_) 
-     
+     the other?_)
+
      **b.** Now split the data into training and validation sets, use the training sets
      to train a Gaussian model and a Poisson model, and use the validation set to assess which
-     model fitst the data best. (_Hint: You should use the maximum likelihood estimate for the
+     model fits the data best. (_Hint: You should use the maximum likelihood estimate for the
      parameters of the models, which will be the sample mean and variance of the training data
      for the Gaussian and the sample mean for the Poisson._)
 
@@ -118,7 +118,7 @@ point processes in general and the Poisson process in particular._
      piece-wise constant inhomogeneous Poisson process). Plot the resulting ISI
      distribution. Conduct a goodness-of-fit test on the spikes. Is the piece-wise
      Poisson model a good one?
- 
+
 
 ### <a name="datasource"></a> Data Source Note:
 This data is courtesy of Tim Blanche, UC Berkeley. He captured single and multiunit recordings
