@@ -17,16 +17,17 @@ a write-up for this homework assignment._
 ### Description of data set
 The dataset for this problem is linked in the numpy file
 [SpikeData05.npz](SpikeData05.npz), which contains numpy arrays
-`SpikeWaveforms` and `RawData`. You can load it by calling
+`SpikeWaveforms` and ~~`RawData`~~. (The raw data was too large to upload. It
+is available on request.) You can load it by calling
 
 ```python
 import numpy as np
 data = np.load('SpikeData05.npz')
 SpikeWaveforms = data['SpikeWaveforms']
-RawData = data['RawData']
+# RawData = data['RawData']
 ```
 
-* `RawData`: This is a matrix of raw data recorded from a tetrode (a four
+* ~~`RawData`: This is a matrix of raw data recorded from a tetrode (a four
 channel electrode) in the hippocampus.  The sampling rate is 30 kHz, and the
 data are simultaneous voltage signals (in μV) from each channel. I considered
 having you do the spike extraction for this data - this involves two steps (1)
@@ -34,7 +35,7 @@ filtering out LFP (600 Hz 2-pole highpass and 2-pole 6 kHz low pass and (2)
 finding instances where one of the channels crosses a threshold value. For the
 sake of time, I decided to do this for you. Each snippet is 40 points long, and
 the threshold crossing happens between the 10th and 11th data points. In this
-data, I chose a value of 60 uV for the threshold.
+data, I chose a value of 60 uV for the threshold.~~
 
 * `SpikeWaveforms` : This is a matrix of action potential waveforms sampled
 simultaneously on all four channels of the tetrode. The size is $$M\times 40
