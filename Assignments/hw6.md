@@ -78,7 +78,7 @@ and the recorded portion of the action potential waveform ("snippet") is in a
     on a graphing calculator. Treat each snippet as a point in  $$\mathbf{x}_m
     \in \mathbb{R}^D, \, m\in \lbrace 1, 2, \ldots M \rbrace$$, where $$D$$ is
     40, the length of each snippet, and $$M$$ is the  total number of snippets.
-    In this problem, we will assume there are $$K = 2$$ neurons contributing
+    In this problem, we will assume there are $$K = 3$$ neurons contributing
     spikes to the recorded waveform. For computational simplicity, use only the
     first 2000 snippets ($$M = 2000$$).
 
