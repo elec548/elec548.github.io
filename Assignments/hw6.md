@@ -205,10 +205,10 @@ and the recorded portion of the action potential waveform ("snippet") is in a
     documented example can be found in from the scikit-learn docs](
     http://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_covariances.html#sphx-glr-auto-examples-mixture-plot-gmm-covariances-py).
 
-    **b.**  Find the cluster assignments for the next 5000 snippet-peaks, and
-    plot them as in **(a)**. You will use these as test data to evaluate how many
-    clusters there should be in the data. Calculate the model likelihood of
-    the second set of 5000 snippet-peaks using the parameters you found in
+    **b.**  Find the cluster assignments for the next 5000 snippet-peaks. You will use these as
+    test data to evaluate how many clusters there should be in the data. Calculate the model
+    likelihood of the second set of 5000 snippet-peaks using the parameters you found in
     **(a)**. Now, repeat the EM-learning in **(a)**, but with $$K = 8, 9, \ldots,
     20$$. What is the likelihood of the test data for each model? Which model
     would you use if you wanted only well-clustered neurons for your analysis?
+    For the most likely value of $$K$$, plot the cluster assignments as in (a).
