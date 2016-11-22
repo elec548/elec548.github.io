@@ -89,4 +89,22 @@ is available on request.) You can load it by calling
     waveforms, and take the ratio to the baseline.)_
 
 3. _Comparing PCA, P-PCA, and FA (30 pts)_
-   **To be finalized**
+    To answer these questions, please begin by downloading and running the
+    Jupyter notebook for the problem
+    [Homework7Problem%3.ipynb](https://elec548.github.io/Assignments/Homework7Problem%3.ipynb).
+    For PCA and P-PCA, the notebook makes a plot showing:
+      - Each data point $$x_n$$ as a black dot in its native 2-D space
+      - The mean, $\mu$  as a green point
+      - The PC space found by either PCA or P-PCA (which is one dimensional)
+      plotted as a line segment
+      - The projection of each data point into the PC space as red points
+      - A red line connecting the original and lower dimensional data
+
+    **a.** The lower dimensional space found by PCA and P-PCA are the same.
+    So why are the lines in P-PCA not orthogonal as they are in the PCA
+    case?
+
+    **b.** Using the code for P-PCA as a guide, implement the EM algorithm
+    for Factor Analysis and make a plot showing the same information. Note that
+    the lower dimensional space found by FA will pass through the mean but
+    will not be the same as in PCA/P-PCA. Why is it different?
