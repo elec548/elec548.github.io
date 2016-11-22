@@ -91,7 +91,7 @@ is available on request.) You can load it by calling
 3. _Comparing PCA, P-PCA, and FA (30 pts)_
     To answer these questions, please begin by downloading and running the
     Jupyter notebook for the problem
-    [Homework7Problem%3.ipynb](https://elec548.github.io/Assignments/Homework7Problem%3.ipynb).
+    [Homework7Problem3.ipynb](https://elec548.github.io/Assignments/Homework7Problem3.ipynb).
     For PCA and P-PCA, the notebook makes a plot showing:
       - Each data point $$x_n$$ as a black dot in its native 2-D space
       - The mean, $\mu$  as a green point
