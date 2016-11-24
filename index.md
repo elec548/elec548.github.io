@@ -53,6 +53,8 @@ analysis. This course is open to students with no prior neurobiology coursework.
   ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/Classification/Classification.pdf)
   + [Notes on Mixture Models
   ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/MixtureModels/MixtureModels.pdf)
+  + [Notes on Dimensionality Reduction
+  ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/DimensionalityReduction/DimensionalityReduction.pdf)
 
 **Assignments:**
 
