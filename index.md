@@ -55,6 +55,8 @@ analysis. This course is open to students with no prior neurobiology coursework.
   ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/MixtureModels/MixtureModels.pdf)
   + [Notes on Dimensionality Reduction
   ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/DimensionalityReduction/DimensionalityReduction.pdf)
+  + [Notes on the Kalman Filter
+  ](https://github.com/ckemere/CourseNotes/blob/master/NeuralSignalProcessing/KalmanFilter/KalmanFilter.pdf)
 
 **Assignments:**
 
