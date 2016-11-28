@@ -67,7 +67,7 @@ analysis. This course is open to students with no prior neurobiology coursework.
   + [Homework 5](/Assignments/hw5.html)
   + [Homework 6](/Assignments/hw6.html)
   + [Homework 7](/Assignments/hw7.html)
-  + [Homework 8](/Assignments/hw7.html)
+  + [Homework 8](/Assignments/hw8.html)
   + [Final Project](/Assignments/finalproject.html)
 
 [**Useful References / Final Project Papers**](Resources/)
