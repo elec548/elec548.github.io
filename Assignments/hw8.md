@@ -27,11 +27,11 @@ to account for a prior model of animal movement.
     **Ex.** Classification of data into $$K$$ classes using labeled training data
     where the data are conditionally Gaussian.
 
-        1. Generate a random number, $$k$$ from $$\{1, \ldots, K\}$$ as the class
+        1. Generate a random number, k from 1, ..., K as the class
         identity. (Use the class prior probabilities to weight the choices.)
 
         2. Sample a random Gaussian from a Gaussian distribution with mean
-        $$\mu_k$$ and covariance $$\Sigma_k$$.
+        mu_k and covariance Sigma_k.
 
     **a.** Clustering data into $$K$$ clusters using a mixture of Gaussians model.
     (_Hint: This might not be different from the example!_)
