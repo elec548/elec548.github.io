@@ -4,11 +4,17 @@ title: ELEC548 - Syllabus
 group: navigation
 ---
 
-# _Syllabus_
+# _ELEC 548 / 483 Syllabus - 2018_
+
+This course covers advanced statistical signal processing and machine learning approaches for
+modern neuroscience data (primarily many-channel spike trains).  Topics include latent variable
+models, point processes, Bayesian inference, dimensionality reduction, dynamical systems, and
+spectral analysis. Neuroscience applications include modeling neural firing rates, spike
+sorting, decoding, characterization of neural systems, and field potential analysis.
 
 ## Instructor: [Caleb Kemere](http://rnel.rice.edu/people/calebkemere)
 
-## Graders: Shayok Dutta, Hamed Rahmani
+## Graders: TBD
 
 ## Location: BRC286
 
@@ -16,8 +22,10 @@ group: navigation
 
 ## Prerequisites: 
 Basic circuits (ELEC 242 or equivalent), Probability (ELEC 303 or equivalent), Linear algebra
-(Math 355 or equivalent), Matlab will be used for many of the homework assignments so some
-familiarity with it will be useful
+(Math 355 or equivalent), Python will be used for many of the homework assignments so some
+familiarity with scientific program is critical. While we will introduce a variety of machine
+learning topics in class, students may find prior knowledge of machine learning concepts (e.g.,
+ELEC475, ELEC476, STAT413 and/or COMP540) helpful.
 
 ## Objective:
 Students should learn the fundamentals of how the activity of neurons represents information
@@ -34,9 +42,10 @@ Students completing the course should be able to:
 
 ## Grading:
 Class grade will be based on homework assignments and the final project. You are welcome to
-work on homework (and final project) in groups. However, for 1 assignments of your choice (not
-including the first), you must be responsible for a significant majority of the content and
-include a statement to that effect.
+work on homework in groups. However, for 1 assignments of your choice (not including the
+first), you must be responsible for a significant majority of the content and include a
+statement to that effect. Students enrolled in 483 may work on their final projects in groups,
+but students enrolled in 548 are expected to work on them independently.
 
   + 6-8 ~weekly homework assignments (70%)
   + final project (30%)
