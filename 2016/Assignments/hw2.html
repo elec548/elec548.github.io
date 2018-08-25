@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 2</title>
+  <meta name="description" content="Neural Signal Procession and Machine Learning">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/Assignments/hw2.html">
+  <link rel="alternate" type="application/rss+xml" title="ELEC548 - Neural Signal Processing and Machine Learning" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">ELEC548 - Neural Signal Processing and Machine Learning</a>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h2 id="homework-2-120-pts">Homework 2 (120 pts)</h2>
+
+<p><em>This problem set is due Tuesday (9/20/2016) at 5pm. Please turn in your work by uploading to
+Canvas. For extra credit, create a Jupyter Notebook containing your answers and your python
+code for question 4, and push this to a github repository (the commit time will be taken as the
+submission time). If you have questions, please post them on the course forum, rather than
+emailing the course staff. This will allow other students with the same question to see the
+response and any ensuing discussion. The goal of this problem set is to review the fundamentals
+of electrophysiology as well as providing some “warmup” Python work.</em></p>
+
+<ol>
+  <li>
+    <p><em>Membrane Potentials and the Nernst Equation (20 pts)</em></p>
+
+    <p>As discussed in class, a neuron’s resting potential is determined by the relative intra- and
+extra-cellular ion concentrations and the corresponding conductivities of the respective ion
+channels.</p>
+
+    <p><strong>a.</strong> Use the Nernst equation to fill in the equilibrium potentials for potassium, sodium,
+  and chloride in the table below. (3 pts)</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Ion</th>
+          <th>Extracellular Concentration</th>
+          <th>Intracellular Concentration</th>
+          <th>Permeability</th>
+          <th>Equilibrium Potential</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>K+</td>
+          <td>20 mM</td>
+          <td>400 mM</td>
+          <td>1</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>Na+</td>
+          <td>440 mM</td>
+          <td>50 mM</td>
+          <td>0.04</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>Cl-</td>
+          <td>560 mM</td>
+          <td>52 mM</td>
+          <td>0.45</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>Mn++</td>
+          <td>2 mM</td>
+          <td>0.01 mM</td>
+          <td>0.01</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>b.</strong> Taking into account the potassium, sodium, and chloride concentrations (ignoring
+  manganese), calculate the resting potential of a neuron with the characteristics in the
+  table above. (2 pts)</p>
+
+    <p><strong>c.</strong> How could you adjust the potassium level to raise the resting potential? Why does this
+  work? (3 pts)</p>
+
+    <p><strong>d.</strong> Calculate the new extracellular potassium concentration that would be needed to bring
+  the resting membrane potential to -65mV. To counteract the decrease in potassium
+  concentration, the cell could insert or remove ion channels into the membrane thus
+  changing the permeability ratio. How might the cell recover the original resting membrane
+  potential and calculate the new permeability ratio?  (6 pts)</p>
+
+    <p><strong>e.</strong> Cells have mechanisms for active transport of sodium, potassium and chloride ions. What
+  would happen to the information in the table above (ignoring Mn++) if the chloride
+  transporter protein was turned off and only passive forces affected chloride ions? What
+  about the resting membrane potential? (6 pts)</p>
+  </li>
+  <li>
+    <p><em>GHK equation with divalent ions (35 pts).</em></p>
+
+    <p>The ion channels which are active at the cell’s resting potential (“resting channels”) are in
+real-life fairly selective and not particularly permeable to ions other than sodium and
+potassium, and in particular not to divalent ions. Let’s imagine that that is not the case, and
+that the resting membrane is also permeable to manganese. Further, let’s assume intra- and
+extracellular concentrations as in the table above.</p>
+
+    <p><strong>a.</strong> Use the Nernst equation to specify the equilibrium potential for Mn++. (2 pts)</p>
+
+    <p><strong>b.</strong> Derive the GHK equation for 3 monovalent ions and a divalent ion. (20 pts)</p>
+
+    <p><strong>c.</strong> Consider an unusual cell with the membrane permeabilities and internal and external
+ionic concentrations in the table. What is the resting membrane potential of this cell? (13
+pts)</p>
+  </li>
+  <li>
+    <p><em>Simulating a neuron (65 pts)</em></p>
+
+    <p>For the following problems, you will make use of Python code that simulates a neuron. You
+can find the hh() function in a <a href="https://github.com/elec548/JupyterNotebooks/blob/master/HodgkinHuxleyNotebook.ipynb">Jupyter
+notebook</a>
+in the class github repository. You should use a time step, Δt  = 0.01 ms (except for <strong>3b</strong>).</p>
+
+    <p><strong>a.</strong> Consider 1 s of responses of the HH neuron. Plot the responses to a 0.2 uA/mm2
+current step at time 0.2 s that lasts for 0.2 s. How many spikes are generated by this
+input? (4 pts)</p>
+
+    <p><strong>b.</strong> Consider the input in <strong>3a</strong> with Δt  = 0. 1 ms, Δt  = 0.05 ms, and Δt  = 0.001 ms. How
+are the results similar/different? (4 pts)</p>
+
+    <p><strong>c.</strong> Evaluate 0.2 s current injections at time 0.2 s. What is the “threshold voltage” for
+this neuron? (You can either look for a “knee” in the voltage curve or use test currents of
+increasing size to probe when an AP is triggered.) Tweak the parameters to decrease and
+increase the threshold voltage by ~5 mV. What did you change, and by how much? (8 pts)</p>
+
+    <p><strong>d.</strong> Using the same time/length of current injection (0.2 s at 0.2 s), consider
+depolarizations of 0 to 0.50 uA/mm2 (in 0.025 uA/mm2 steps). Count and plot the number of
+spikes generated for each level. This is an “input-output” curve. How could you change the
+slope of this curve? (8 pts)</p>
+
+    <p><strong>e.</strong> Now modify the HH neuron to become a CST neuron (TCN Ch. 6 and/or included paper for
+parameters). Plot the input-output curve of the CST neuron as in <strong>3d</strong>. How is it different?
+(10 pts)</p>
+
+    <p><strong>f.</strong> Plot and compare the response of an HH neuron and a CST neuron to an injected current
+profile of 0 for 0.2 s, −0.050 uA/mm2 for 0.2 s, and then 0.15 uA/mm2 for 0.1 s (i.e., an
+input current that goes low then high). How are they similar? How are they different? (6
+pts)</p>
+
+    <p><strong>g.</strong> (Random input.) Now you will consider input current profiles for the CST neuron (your
+choice!) that are random. The input <script type="math/tex">x</script> should be 0.5 s of a smoothed Gaussian random
+variable, where the smoothing is done using a 100 point moving average filter. After
+smoothing, the input should have mean <script type="math/tex">\mu</script> and standard deviation <script type="math/tex">\sigma</script>, where
+<script type="math/tex">\mu \in \lbrace 0, 0.05, 0.1, 0.15, 0.2\rbrace \, \mu A/mm^2</script> and <script type="math/tex">\sigma \in \lbrace
+0, 0.01, 0.05, 0.1 \rbrace \, \mu A/mm^2</script>.  For each pair of parameters, construct 25
+input current profiles. (For the zero variability input, it is only necessary to do one.)
+For each of these 3 x 5 x 25 + 5 = 380 input “experiments”, count the number of action
+potentials produced by the neuron. Make a plot showing the the average number of generated
+spikes as a function of the mean depolarization for each of the standard deviations (i.e., 4
+lines)? How does the variance in the number of spikes per trial change with these different
+parameters?</p>
+
+    <p><strong>Implementation Hint:</strong> You will probably want to use the functions <code class="highlighter-rouge">np.random.randn</code> (for the Gaussian)
+and <code class="highlighter-rouge">np.conv</code> (to calculate the smoothed signal remembering that you’ll need to truncate the
+convolution output to be the right length). Recall that if <script type="math/tex">y \sim \mathcal{N}(0,
+\sigma^2)</script>, then <script type="math/tex">\text{mean}(ay + b) = b</script> and <script type="math/tex">\text{var}(ay + b) = a^2\sigma^2</script>.</p>
+
+    <p>(25 pts)</p>
+  </li>
+</ol>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+          &copy; 2016 <a href="mailto:caleb.kemere@rice.edu">Caleb Kemere</a>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <script type="text/javascript"
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  </body>
+
+</html>

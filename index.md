@@ -17,7 +17,7 @@ biomedical systems which might therapeutically interact with neural circuits, ad
 statistical signal processing and machine learning approaches are required._
 
 
-## What does ELEC548 cover?
+## What does ELEC548/483 cover?
 
 _This class will cover a range of techniques and their application to basic neuroscience and
 neural interfaces. Topics include an introduction to neurobiology and electrophysiology for
@@ -39,11 +39,11 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Time** -- Tuesdays/Thursdays 9:25-10:40 AM
 
-**Canvas** -- [https://canvas.rice.edu/courses/1080](https://canvas.rice.edu/courses/1080)
+**Canvas** -- [https://canvas.rice.edu/courses/14295](https://canvas.rice.edu/courses/14295)
 
 **Syllabus** -- [here](/syllabus.html)
 
-**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/quzu5x79gktfww5/AACRFtncDVpCtgqkZFZmD0TWa?dl=0)
+**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/tghn8utpq503fue/AAAe5WwYLA0Lz0L1ie3EkkQza?dl=0)
 
 **Course Notes**
 
@@ -61,6 +61,8 @@ analysis. This course is open to students with no prior neurobiology coursework.
 **Assignments:**
 
   + [Homework 1](/Assignments/hw1.html)
+
+<!--
   + [Homework 2](/Assignments/hw2.html)
   + [Homework 3](/Assignments/hw3.html)
   + [Homework 4](/Assignments/hw4.html)
@@ -69,6 +71,7 @@ analysis. This course is open to students with no prior neurobiology coursework.
   + [Homework 7](/Assignments/hw7.html)
   + [Homework 8](/Assignments/hw8.html)
   + [Final Project](/Assignments/finalproject.html)
+-->
 
 [**Useful References / Final Project Papers**](Resources/)
 
@@ -80,7 +83,8 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Previous versions of the class**
 
-  + [2015](http://dsp.rice.edu/courses/elec548)
+  + [2016](/2016/)
+  + [2015(dead link)](http://dsp.rice.edu/courses/elec548)
 
 </div>
 </div>

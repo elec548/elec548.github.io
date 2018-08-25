@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 8</title>
+  <meta name="description" content="Neural Signal Procession and Machine Learning">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/Assignments/hw8.html">
+  <link rel="alternate" type="application/rss+xml" title="ELEC548 - Neural Signal Processing and Machine Learning" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">ELEC548 - Neural Signal Processing and Machine Learning</a>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h2 id="homework-8-100-pts">Homework 8 (100 pts)</h2>
+
+<p><em>This problem set is due the last day of classes (12/2/2016), but can be
+turned in late with no penalty. Note that we will drop the lowest score
+assignment, so this is optional if you choose not to do it. Please turn in your
+work by uploading to Canvas. f you have questions, please post them on the
+course forum, rather than emailing the course staff. This will allow other
+students with the same question to see the response and any ensuing discussion.
+The goal of this problem set is to review clustering through the process of
+spike sorting action potentials data. You should submit both commented code and
+a write-up for this homework assignment.</em></p>
+
+<p>The goal of this assignment is to carry out continuous neural decoding, first
+just using Bayes rule and then (for extra credit) by using a <em>particle filter</em>
+to account for a prior model of animal movement.</p>
+
+<ol>
+  <li>
+    <p><em>Review of generative models (30 pts)</em>
+  Write down simple pseudocode for the generation of simulated data for the
+  following problems.</p>
+
+    <p><strong>Ex.</strong> Classification of data into <script type="math/tex">K</script> classes using labeled training data
+ where the data are conditionally Gaussian.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 1. Generate a random number, k from 1, ..., K as the class
+ identity. (Use the class prior probabilities to weight the choices.)
+
+ 2. Sample a random Gaussian from a Gaussian distribution with mean
+ mu_k and covariance Sigma_k.
+</code></pre></div>    </div>
+
+    <p><strong>a.</strong> Clustering data into <script type="math/tex">K</script> clusters using a mixture of Gaussians model.
+ (<em>Hint: This might not be different from the example!</em>)</p>
+
+    <p><strong>b.</strong> Dimensionality reduction from <script type="math/tex">D</script>-dimensional data to <script type="math/tex">M</script>-dimensional
+ data, using probabilistic PCA.</p>
+
+    <p><strong>c.</strong> A linear dynamical system with Gaussian initial state, innovations,
+ and observation noise (i.e., the generative model for a Kalman filter).</p>
+  </li>
+  <li>
+    <p><em>Convexity conditions for Poisson firing rate functions (30 pts)</em>
+  Consider a set of <script type="math/tex">k = 1\ldots N</script> rat hippocampal neurons in which the number
+  of spikes observed  follows a Poisson distribution, <script type="math/tex">n_k \sim \text{Poisson}\!(e^{-g(x)})</script>,
+  where <script type="math/tex">g(x)</script> is some function of the rat’s position <script type="math/tex">x</script>. Given an observation
+  of spike counts,  <script type="math/tex">\mathbf{n} = [n_1, n_2, \ldots]^\text{T}</script>, what is the log
+  likelihood function of the rats  position <script type="math/tex">x</script>? What are the first and second
+  derivatives of the log likelihood with respect to <script type="math/tex">x</script>? What conditions on
+  <script type="math/tex">g(x)</script> would imply that the log likelihood was concave (i.e., the second
+  derivative was negative everywhere)?</p>
+  </li>
+  <li>
+    <p><em>Single step of dynamical system estimation (40 pts)</em>
+  Consider a set of 10 neurons whose firing can be described as function of the form
+  <script type="math/tex">\begin{equation*}
+  n_k \sim \text{Poisson}\!\left[r_{max,k}  \exp\left(\frac{-(x - \mu_k)^2}{2\sigma_k^2}\right)\Delta_t\right].
+  \end{equation*}</script>
+  You will find the parameters for these neurons in the file
+  <a href="hw8problem3.npz">hw8problem3.npz</a>.
+  The vectors <code class="highlighter-rouge">MaxRates</code> (in spikes per second), <code class="highlighter-rouge">FieldCenters</code>, and <code class="highlighter-rouge">FieldWidths</code>
+  correspond to the values of <script type="math/tex">r_{max}</script>, <script type="math/tex">\mu</script>, and <script type="math/tex">\sigma</script> for the
+  neurons, respectively. Spike counts for 250 milleseconds of neural activity is
+  found in the vector <code class="highlighter-rouge">NeuralObservation</code>.</p>
+
+    <p><strong>a.</strong> Plot the log likelihood of the rat’s position, <script type="math/tex">x</script>, over the range <script type="math/tex">[0,
+ 100]</script> (ignore the term(s) in the likelihood function that is common to all
+ positions). What is the maximum likelihood position of the rat?</p>
+
+    <p><strong>b.</strong> Now assume that you have prior information about the rat’s position
+ characterized by a normal distribution, with mean 30 and standard deviation 5.
+ On the same graph as for (a), plot the log likelihood of the rat’s position
+ using just your prior distribution and using both the prior distribution and
+ the observations of neural activity. What is the maximum <em>a posteriori</em>
+ position of the rat?</p>
+  </li>
+</ol>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+          &copy; 2016 <a href="mailto:caleb.kemere@rice.edu">Caleb Kemere</a>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <script type="text/javascript"
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  </body>
+
+</html>

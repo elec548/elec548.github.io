@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 4</title>
+  <meta name="description" content="Neural Signal Procession and Machine Learning">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/Assignments/hw4.html">
+  <link rel="alternate" type="application/rss+xml" title="ELEC548 - Neural Signal Processing and Machine Learning" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">ELEC548 - Neural Signal Processing and Machine Learning</a>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h2 id="homework-4-120-pts">Homework 4 (120 pts)</h2>
+
+<p><em>This problem set is due Friday (10/21/2016) at 5pm. Please turn in your work by uploading to
+Canvas. f you have questions, please post them on the course forum, rather than
+emailing the course staff. This will allow other students with the same question to see the
+response and any ensuing discussion. The goal of this problem set is to review the basics of
+point processes in general and the Poisson process in particular.</em></p>
+
+<ol>
+  <li>
+    <p><em>Point Process Model Validation (30 pts)</em></p>
+
+    <p>We can describe the number of spikes that a neuron produces in a one second
+window using a wide variety of random process models. Let’s refer to the
+parameters of a given model as <script type="math/tex">\theta</script>, and a set of neural counts as
+<script type="math/tex">\mathbf{n}</script>. We can evaluate the quality of the model by asking for which
+model/parameters the likelihood of the data, <script type="math/tex">P(\theta \mid \mathbf{n})</script>,
+is maximized. In this problem you will try to determine the right model for
+the spikes from a synthetic neuron.</p>
+
+    <p><strong>a.</strong> <em>Model Comparison (10 pts)</em> Look at the data in the numpy data file
+  <a href="hw4problem1A.npy">hw4problem1A.npy</a>. This file contains two variables, <code class="highlighter-rouge">SpikeTimes</code> and <code class="highlighter-rouge">SpikeCounts</code>.
+  <code class="highlighter-rouge">SpikeTimes</code> is a list of spike times recorded in one experimental trial (each trial is 1
+  s for simplicity) from a neuron.  For each trial, for convenience, the number of spikes
+  is given in the corresponding element of <code class="highlighter-rouge">SpikeCount</code>. You can load the data into python
+  using <code class="highlighter-rouge">numpy.load()</code>:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="p">[</span><span class="n">SpikeTimes</span><span class="p">,</span> <span class="n">SpikeCount</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">'hw4problem1A.npy'</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>Consider two possible models for the number of spikes per trial:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align: left">Model</th>
+          <th style="text-align: left">Parameters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: left">Gaussian</td>
+          <td style="text-align: left">Mean = 10.2, Variance = 9.5</td>
+        </tr>
+        <tr>
+          <td style="text-align: left">Poisson</td>
+          <td style="text-align: left">Rate = 9.8</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Using the data provided evaluate which set of parameters best describes the data. (<em>Hint:
+  You should calculate the likelihood of each model. In other words, calculate the
+  probability of, e.g., data from 1000 trials of the simulated data given one model or
+  the other?</em>)</p>
+
+    <p><strong>b.</strong> Now split the data into training and validation sets, use the training sets
+  to train a Gaussian model and a Poisson model, and use the validation set to assess which
+  model fits the data best. (<em>Hint: You should use the maximum likelihood estimate for the
+  parameters of the models, which will be the sample mean and variance of the training data
+  for the Gaussian and the sample mean for the Poisson.</em>)</p>
+
+    <p><strong>c.</strong> <em>Point Processes (10 pts)</em> Consider the actual spike times from <strong>(a)</strong>
+  (given in the SpikeTimes list). If you were to model this neuron with a Poisson process,
+  would you use a constant or a time-varying rate over the 1 second window?
+  (Justify your answer with one or more plots.)</p>
+
+    <p><strong>d.</strong> <em>Fano Factor / ISI Distribution (10 pts)</em> Consider the spike times returned by a
+  different neuron whos data are given in <a href="hw4problem1C.npy">hw4problem1C.npy</a>
+  If you were to model this neuron with a Poisson process, would you use a constant or a
+  time- varying rate? Do the variance and mean of the count distribution have the
+  relationship you would expect for a Poisson process? What physiological process might you
+  observe in the spike times that would explain this? (<em>Hint: You’ll want to actually look
+  at the spike times. Generating a peri-stimulus time histogram (PSTH) showing the average
+  number of spikes in small bins of time will help explain your observations.</em>)</p>
+  </li>
+  <li>
+    <p><em>Describing Real Data (60 pts)</em></p>
+
+    <p>In this problem you are going to characterize the <a href="#datasource">neural activity recorded
+on a multielectrode array in visual cortex</a>, found in
+<a href="hw4problem2.npy">hw4problem2.npy</a>.  Spike times (in microseconds) for 10 neurons are given
+in <code class="highlighter-rouge">spiketimes</code>, a 10 element numpy array, where each element is a numpy vector of
+spiketimes.  The time-varying stimulus is described in the <code class="highlighter-rouge">stimulus</code> numpy array, where the
+first column is timestamps (which follow regular 5 ms steps) and the second column is the
+direction of motion (in degrees) of a moving bar. Stimulus directions are randomized, each
+direction is maintained for 4 s, and directions are repeated 8 times. You can load the data
+into python using <code class="highlighter-rouge">numpy.load()</code>:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="p">[</span><span class="n">stimulus</span><span class="p">,</span> <span class="n">spiketimes</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">'hw4problem2.npy'</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p><strong>a.</strong> (10 pts) Neural activity in visual cortex was recorded while the cat
+  was viewing drifting bars (like in the Hubel and Weisel video) that
+  cycled through different angles. The visual stimulus was constant for
+  4s, and then changed (the angle of the stimulus in 5 ms bins is given
+  in the stimulus vector). Plot the “tuning curve” for the activity from the 10th
+  neuron, show how the mean number of spikes varies as a function of the
+  direction of the moving bar. (The x-axis should be stimulus direction and the
+  y-axis should be “average spikes per second”.) Does this neuron have one
+  “preferred direction”?  Why might the directional tuning be shaped the way it
+  is?</p>
+
+    <p><strong>b.</strong> (10 pts) Calculate the tuning curves for all the neurons. Plot a histogram
+  of the “preferred direction” (i.e., direction of stimulus which produces
+  maximum average spiking) of the neurons. Plot a histogram of the “maximum
+  firing rate” (i.e., the average firing rate for the preferred direction).</p>
+
+    <p><strong>c.</strong> (10 pts) Select the neuron with the largest maximum firing rate.
+  For each stimulus direction, calculate the mean spiking rate and the variance
+  from this mean in the number of spikes observed in one stimulus presentation.
+  Calculate the Fano factor for each stimulus direction and compare to what is
+  expected for a Poisson process. Repeat for the neuron with the largest average
+  (i.e., across all directions) firing rate.</p>
+
+    <p><strong>d.</strong> (10 pts) For the neurons in part (c), create ISI distributions for
+  spikes during stimuli in the preferred direction. Compare this to the ISI
+  distribution expected under a Poisson approximation.</p>
+
+    <p><strong>e.</strong> (20 pts) For the neurons in part (c), use the time-rescaling
+  theorem to renormalize the ISIs for all stimulus directions (i.e., assuming a
+  piece-wise constant inhomogeneous Poisson process). Plot the resulting ISI
+  distribution. Conduct a goodness-of-fit test on the spikes. Is the piece-wise
+  Poisson model a good one?</p>
+  </li>
+</ol>
+
+<h3 id="-data-source-note"><a name="datasource"></a> Data Source Note:</h3>
+<p>This data is courtesy of Tim Blanche, UC Berkeley. He captured single and multiunit recordings
+in the primary visual cortex of cats during viewing of simple and complex stimuli.  It has been
+shared for public use on the CRCNS.org website as data set “pvc3”, and we are using the data
+from the “drifting bar” section.</p>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+          &copy; 2016 <a href="mailto:caleb.kemere@rice.edu">Caleb Kemere</a>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <script type="text/javascript"
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  </body>
+
+</html>

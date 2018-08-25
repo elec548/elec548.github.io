@@ -14,7 +14,7 @@ sorting, decoding, characterization of neural systems, and field potential analy
 
 ## Instructor: [Caleb Kemere](http://rnel.rice.edu/people/calebkemere)
 
-## Graders: TBD
+## Graders: [Shayok Dutta]()
 
 ## Location: BRC286
 
@@ -35,9 +35,16 @@ underlying information from the resulting neural data.
 ## Outcome: 
 Students completing the course should be able to:
 
-  + Explain the fundamentals of neural information processing
-  + Mathematically model the electrophysiological behavior of neurons
-  + Extract information from neural data
+  + Students are comfortable with neural data in many different forms,
+    including “spikes” measured intracellularly, extracellularly, optically,
+    and LFP/EEG.
+
+  + Students are comfortable building generative models that describe neural
+    activity either from first principles or using experimental data.
+
+  + Students are comfortable using generative models to optimally decode
+    underlying information from neural activity.
+
 
 
 ## Grading:
@@ -48,7 +55,7 @@ statement to that effect. Students enrolled in 483 may work on their final proje
 but students enrolled in 548 are expected to work on them independently.
 
   + 6-8 ~weekly homework assignments (70%)
-  + final project (30%)
+  + final project (30%) (students enrolled in 483 may do final project as a team)
 
 ## ~Bi-Weekly Schedule
   1. Introduction

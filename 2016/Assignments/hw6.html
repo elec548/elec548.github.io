@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Homework 6</title>
+  <meta name="description" content="Neural Signal Procession and Machine Learning">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/Assignments/hw6.html">
+  <link rel="alternate" type="application/rss+xml" title="ELEC548 - Neural Signal Processing and Machine Learning" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">ELEC548 - Neural Signal Processing and Machine Learning</a>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h2 id="homework-6-100-pts">Homework 6 (100 pts)</h2>
+
+<p><em>This problem set is due Wednesday (11/16/2016) at 11:59pm. Please turn in your
+work by uploading to Canvas. f you have questions, please post them on the
+course forum, rather than emailing the course staff. This will allow other
+students with the same question to see the response and any ensuing discussion.
+The goal of this problem set is to review clustering through the process of
+spike sorting action potentials data. You should submit both commented code and
+a write-up for this homework assignment.</em></p>
+
+<h3 id="description-of-data-set">Description of data set</h3>
+<p>The dataset for this problem is linked in the numpy file
+<a href="SpikeData05.npz">SpikeData05.npz</a>, which contains numpy arrays
+<code class="highlighter-rouge">SpikeWaveforms</code> and <del><code class="highlighter-rouge">RawData</code></del>. (The raw data was too large to upload. It
+is available on request.) You can load it by calling</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s">'SpikeData05.npz'</span><span class="p">)</span>
+<span class="n">SpikeWaveforms</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'SpikeWaveforms'</span><span class="p">]</span>
+<span class="c"># RawData = data['RawData']</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p><del><code class="highlighter-rouge">RawData</code>: This is a matrix of raw data recorded from a tetrode (a four
+channel electrode) in the hippocampus.  The sampling rate is 30 kHz, and the
+data are simultaneous voltage signals (in μV) from each channel. I considered
+having you do the spike extraction for this data - this involves two steps (1)
+filtering out LFP (600 Hz 2-pole highpass and 2-pole 6 kHz low pass and (2)
+finding instances where one of the channels crosses a threshold value. For the
+sake of time, I decided to do this for you. Each snippet is 40 points long, and
+the threshold crossing happens between the 10th and 11th data points. In this
+data, I chose a value of 60 uV for the threshold.</del></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">SpikeWaveforms</code> : This is a matrix of action potential waveforms sampled
+simultaneously on all four channels of the tetrode. The size is <script type="math/tex">M\times 40
+\times 4</script>, where <script type="math/tex">M = 33787</script> is the number of action potentials detected,
+and the recorded portion of the action potential waveform (“snippet”) is in a
+40 sample window around the threshold crossing.</p>
+  </li>
+</ul>
+
+<h3 id="questions">Questions</h3>
+
+<ol>
+  <li>
+    <p><em>Plot the spike peaks in 4-D space (10 pts)</em></p>
+
+    <p>Find the peak amplitude (post-threshold) of each snippet on each channel. If
+ you look at some waveforms, you’ll see that the peak typically happens
+ within 5-10 data points of the threshold crossing (later peaks are noise!).
+ Make a 6 subplot figure showing a point in each panel for each detected
+ action potential. The point should be the peak amplitude on channel A vs the
+ peak amplitude on channel B, where A and B are the combinatorial pairs
+ within {1; 2; 3; 4} (i.e., 1 vs. 2, 1 vs. 3, etc.). Once you have found the
+ snippet peaks as a list or numpy array (<code class="highlighter-rouge">Peaks</code>), the following code can
+ be useful:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">PP</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">Peaks</span><span class="p">))</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">PairGrid</span><span class="p">(</span><span class="n">PP</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map_lower</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">hexbin</span><span class="p">,</span><span class="n">gridsize</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">mincnt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'seismic'</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="s">'log'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">triu_indices_from</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
+  <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><em>Clustering with K-Means (40 pts)</em></p>
+
+    <p>Note that SciPy has an implementation of K-means. For this assignment,
+ however, you are to implement your own version of it. Use your
+ implementation to determine the neuron responsible for each recorded spike.
+ Use only the data from the first channel of the tetrode. You may only use
+ basic  NumPy commands, i.e. linear algebra and functions that you would find
+ on a graphing calculator. Treat each snippet as a point in  <script type="math/tex">\mathbf{x}_m
+ \in \mathbb{R}^D, \, m\in \lbrace 1, 2, \ldots M \rbrace</script>, where <script type="math/tex">D</script> is
+ 40, the length of each snippet, and <script type="math/tex">M</script> is the  total number of snippets.
+ In this problem, we will assume there are <script type="math/tex">K = 3</script> neurons contributing
+ spikes to the recorded waveform. For computational simplicity, use only the
+ first 2000 snippets (<script type="math/tex">M = 2000</script>).</p>
+
+    <p><strong>a.</strong> For each cluster (<em>k</em> = 1, 2, 3), create a separate “voltage versus
+ time” plot containing the following:</p>
+
+    <ul>
+      <li>
+        <p>the cluster center <script type="math/tex">\boldsymbol \mu_k</script> generated by K-Means as a red
+ waveform trace (i.e., the prototypical action potential for the <em>k</em>-th
+ neuron and</p>
+      </li>
+      <li>
+        <p>all of the waveform snippets assigned to the <em>k</em>-th cluster</p>
+      </li>
+    </ul>
+
+    <p><strong>b.</strong> Plot the objective number <script type="math/tex">J</script> versus iteration number (as in Figure
+ 9.2 in <em>PRML</em>). How many iterations did it take for K-Means to converge?</p>
+
+    <p><strong>c.</strong> Repeat the problem with K = 4 clusters.</p>
+  </li>
+  <li>
+    <p><em>Gaussian Mixtures (20 pts)</em></p>
+
+    <p><strong>THIS QUESTION IS INCLUDED ONLY FOR REFERENCE - DO NOT TURN IN.</strong></p>
+
+    <p>Consider the plot of snippet peaks you made for problem (1). The clouds of
+ points you find do not seem circular. Thus, we’d like to find clusters that
+ would fit to the shape of what we observe. This is a case where a Gaussian
+ mixture model can work really well. In class, we derived the EM algorithm
+ for the Gaussian mixture model by taking derivatives of the data likelihood
+ <script type="math/tex">\Pr(\lbrace \mathbf{x} \rbrace \vert \theta)</script>, where <script type="math/tex">\lbrace \mathbf{x}
+ \rbrace</script> represents the training data  <script type="math/tex">\mathbf{x}_1, \mathbf{x}_2,
+ \ldots, \mathbf{x}_M</script>, and <script type="math/tex">\theta</script> represents all the model parameters
+ <script type="math/tex">{\boldsymbol \mu}_k, {\boldsymbol\Sigma}_k, \text{ and } \pi_k, (k = 1,
+ \ldots, K)</script>. An alternate approach is to apply the general EM algorithm
+ (shown on p. 440-441 in <em>PRML</em>) to the Gaussian mixture model. Both
+ approaches should yield the same update equations, which we will show in
+ this problem.</p>
+
+    <p>The Gaussian mixture model is defined by the prior probability of each
+ mixture component indexed by <script type="math/tex">z</script>:</p>
+
+    <script type="math/tex; mode=display">\Pr(z = k) = \pi_k</script>
+
+    <p>and the conditional distribution of the data point $#\mathbf{x}#$ given the
+ mixture component</p>
+
+    <script type="math/tex; mode=display">\Pr(\mathbf{x} \vert z = k) =
+   \mathcal{N} (\mathbf{x} \vert \boldsymbol \mu_k, \boldsymbol \Sigma_k)</script>
+
+    <p>where <script type="math/tex">k = 1, \ldots, K</script>. We will denote the <em>n</em>-th data point as
+ <script type="math/tex">\mathbf{x}_n</script> and its corresponding latent variable
+ as <script type="math/tex">z_n</script>, where <script type="math/tex">n = 1, \ldots, N</script>.</p>
+
+    <p><strong>a.</strong> In the <strong>E-step</strong> of the general EM algorithm, we evaluate
+ <script type="math/tex">\Pr(z_n = k \vert \mathbf{x}_n)</script>. For the Gaussian mixture
+ model, show that</p>
+
+    <script type="math/tex; mode=display">\Pr(z = k \vert \mathbf{x}_n) = \frac{\mathcal{N}(\mathbf{x}_n \vert \boldsymbol \mu_k, \boldsymbol \Sigma_k) \pi_k}%
+ {\sum_{j=1}^K \mathcal{N}(\mathbf{x}_n \vert \boldsymbol \mu_j, \boldsymbol \Sigma_j) \pi_j}</script>
+
+    <p><strong>b.</strong> In the <strong>M-step</strong> of the general EM algorithm, we maximize the
+ expected log joint distribution (summed across all <script type="math/tex">N</script> data points)</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{split}
+ \mathcal{Q}(\theta) &=\sum_{n=1}^N \text{E}\left[\log \Pr(\mathbf{x}_n, z_n \vert \theta)\right] \\
+  &=\sum_{n=1}^N \sum_{k=1}^K \Pr(z_n=k \vert \mathbf{x}_n) \log \Pr(\mathbf{x}_n, z_n \vert \theta)
+  \end{split} %]]></script>
+
+    <p>with respect to the model parameters <script type="math/tex">\theta</script>. Note that the expectation
+ above is taken with respect to the distribution found in the E-step in part
+ <strong>(a)</strong>. We seek to find</p>
+
+    <script type="math/tex; mode=display">\theta^{\text{new}} = \underset{\theta}{\text{argmax}} \mathcal{Q}(\theta).</script>
+
+    <p>For the Gaussian mixture model, let <script type="math/tex">\gamma_{nk} = \Pr(z_n = k \vert
+ \mathbf{x}_n)</script> for notational simplicity. By maximizing
+ <script type="math/tex">\mathcal{Q}(\theta)</script> with respect to each of the model parameters, show
+ that</p>
+
+    <script type="math/tex; mode=display">% <![CDATA[
+\begin{split}
+ \boldsymbol \mu_k^{\text{new}} &= \frac{1}{N_k} \sum_{n=1}^N \gamma_{n k} \mathbf{x}_n \\
+ \boldsymbol \Sigma_k^{\text{new}} &= \frac{1}{N_k} \sum_{n=1}^N \gamma_{n k} (\mathbf{x}_n - \boldsymbol \mu_k) (\mathbf{x}_n - \boldsymbol \mu_k)^T \\
+ \pi_k^{\text{new}} &= \frac{N_k}{N}
+ \end{split} %]]></script>
+
+    <p>where <script type="math/tex">N_k = \sum_{n=1}^N \gamma_{n k}</script>.</p>
+
+    <p><em>(Hint: The distribution found in the E-step, <script type="math/tex">\Pr(z_n = k \vert
+ \mathbf{x}_n</script>, should be treated as a fixed distribution (with no
+ parameters) in the M-step. In other words, the <script type="math/tex">\gamma_{n k}</script> should be
+ treated as constants in <script type="math/tex">\mathcal{Q}(\theta)</script>. The model parameters should
+ only appear in the joint distribution <script type="math/tex">\Pr(\mathcal{x}_n, z_n \vert
+ \theta)</script>.)</em></p>
+  </li>
+  <li>
+    <p><em>Using Gaussian Mixtures (50 pts)</em></p>
+
+    <p>In python, the scikit-learn package has nice support for mixture models.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">mixture</span>
+<span class="n">gmix</span> <span class="o">=</span> <span class="n">mixture</span><span class="o">.</span><span class="n">GMM</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">covariance_type</span><span class="o">=</span><span class="s">'full'</span><span class="p">)</span>
+<span class="n">gmix</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">peaks</span><span class="p">)</span>
+</code></pre></div>    </div>
+
+    <p>You will use this package to define and train a model of the 4-channel
+ waveform peaks. To make this problem more interesting, load data from the
+ file <a href="SpikeData12.npz">SpikeData12.npz</a>, and find the waveform peaks as in
+ <strong>(1)</strong>.</p>
+
+    <p><strong>a.</strong> Use the first 5000 snippet-peaks (i.e., <script type="math/tex">\mathbf{x}_n \in
+ \mathcal{R}^4</script> are the peak of the spike snippet in each tetrode channel
+ for <script type="math/tex">n = 1, \ldots 5000</script> snippets), and learn the Gaussian mixture
+ parameters for <script type="math/tex">K=10</script> neurons. Plot the resulting cluster assignments in a
+ six panel plot as in <strong>(2)</strong> with the clusters color-coded. <a href="http://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_covariances.html#sphx-glr-auto-examples-mixture-plot-gmm-covariances-py">A well
+ documented example can be found in from the scikit-learn docs</a>.</p>
+
+    <p><strong>b.</strong>  Find the cluster assignments for the next 5000 snippet-peaks. You will use these as
+ test data to evaluate how many clusters there should be in the data. Calculate the model
+ likelihood of the second set of 5000 snippet-peaks using the parameters you found in
+ <strong>(a)</strong>. Now, repeat the EM-learning in <strong>(a)</strong>, but with <script type="math/tex">K = 8, 9, \ldots,
+ 20</script>. What is the likelihood of the test data for each model? Which model
+ would you use if you wanted only well-clustered neurons for your analysis?
+ For the most likely value of <script type="math/tex">K</script>, plot the cluster assignments as in (a).</p>
+  </li>
+</ol>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+          &copy; 2016 <a href="mailto:caleb.kemere@rice.edu">Caleb Kemere</a>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <script type="text/javascript"
+     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+  </body>
+
+</html>
