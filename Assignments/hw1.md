@@ -118,13 +118,14 @@ neurobiology._
      **d.** (Hard) An important discovery was that synapses release neurotransmitter in
      quanta, which we now know correspond to vesicles. As part of the development of the quantal
      theory of neurotransmission, it was observed that the size of post-synaptic potentials
-     increased in steps that were the same size as "mini-PSPs", small post-synaptic potentials
+     increased in steps that were the same size as "mini-PSCs", small post-synaptic currents
      observed in the absence of an impinging action potential. Assume that you are investigating
      plasticity in an excitatory synapse induced by some means. (i) If you see
-     an increase in the EPSP (excitatory postsynaptic potential) but the size of mini-EPSPs
+     an increase in the evoked EPSC (excitatory postsynaptic current) but the size of mini-EPSCs
      remain constant, would you assume that the plasticity mechanism you are inducing is
      pre-synaptic or post-synaptic? (ii) What if you observe an increase in the size of
-     mini-EPSPs? What is an example of a pre-synaptic plasticity mechanism? What about a
-     post-synaptic plasticity mechanism?
+     mini-EPSCs? (iii) What is an example of a pre-synaptic plasticity mechanism that might lead
+     to larger EPSCs? What about a post-synaptic plasticity mechanism that would lead to larger
+     EPSCs?
 
 
