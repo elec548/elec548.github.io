@@ -5,7 +5,7 @@ title: Homework 1
 
 ## Homework 1
 
-_This problem set is due Thursday (9/6/2018) at 11:59 pm. Please turn in your work by uploading to
+_This problem set is due Thursday (9/6/2018) at 11:58 pm. Please turn in your work by uploading to
 Canvas. Preferably, I'd love to see it turned in as a Jupyter notebook with code
 shown for problem 5! If you have questions, please post them on the course
 forum, rather than emailing the course staff. This will allow other students
