@@ -5,116 +5,141 @@ title: Homework 2
 
 ## Homework 2 (120 pts)
 
-_This problem set is due Tuesday (9/20/2016) at 5pm. Please turn in your work by uploading to
-Canvas. For extra credit, create a Jupyter Notebook containing your answers and your python
-code for question 4, and push this to a github repository (the commit time will be taken as the
-submission time). If you have questions, please post them on the course forum, rather than
+_This problem set is due Wednesday (9/19/2018) at 11:59 pm. Please turn in your work by uploading to
+Canvas. f you have questions, please post them on the course forum, rather than
 emailing the course staff. This will allow other students with the same question to see the
-response and any ensuing discussion. The goal of this problem set is to review the fundamentals
-of electrophysiology as well as providing some “warmup” Python work._
+response and any ensuing discussion. The goal of this problem set is to review the basics of
+point processes in general and the Poisson process in particular._
 
 
-1. _Membrane Potentials and the Nernst Equation (20 pts)_
+1. _Properties of the Poisson Random Processes (30 pts)_
 
-   As discussed in class, a neuron’s resting potential is determined by the relative intra- and
-   extra-cellular ion concentrations and the corresponding conductivities of the respective ion
-   channels. 
+   It is not uncommon for the action potential waveforms from multiple neurons
+   to be recorded on a single electrode. Imagine that exactly two neurons are
+   contributing spikes to the signal you are recording. Each neuron is spiking
+   independently according to a Poisson process with rate $$\lambda_1$$ and $$\lambda_2$$
+   respectively.
 
-     **a.** Use the Nernst equation to fill in the equilibrium potentials for potassium, sodium,
-     and chloride in the table below. (3 pts) 
+   **a.** The raw spike train recorded on the electrode is a Poisson process. Show
+   that it has an exponential ISI distribution. (_Hint: What is Pr(combined
+   signal > t), which is 1 – CDF, in terms of the same quantity for each of the
+   neurons?_)
 
-     Ion | Extracellular Concentration | Intracellular Concentration | Permeability | Equilibrium Potential
-     --- | --- | --- | --- | ---
-     K+ |   20 mM | 400 mM | 1 | 
-     Na+ | 440 mM | 50 mM | 0.04 | 
-     Cl- | 560 mM | 52 mM | 0.45 | 
-     Mn++ |    2 mM | 0.01 mM | 0.01 |  | 
+   **b.** What is the rate of this Poisson process?
 
-     **b.** Taking into account the potassium, sodium, and chloride concentrations (ignoring
-     manganese), calculate the resting potential of a neuron with the characteristics in the
-     table above. (2 pts)
-
-     **c.** How could you adjust the potassium level to raise the resting potential? Why does this
-     work? (3 pts)
-
-     **d.** Calculate the new extracellular potassium concentration that would be needed to bring
-     the resting membrane potential to -65mV. To counteract the decrease in potassium
-     concentration, the cell could insert or remove ion channels into the membrane thus
-     changing the permeability ratio. How might the cell recover the original resting membrane
-     potential and calculate the new permeability ratio?  (6 pts)
-
-     **e.** Cells have mechanisms for active transport of sodium, potassium and chloride ions. What
-     would happen to the information in the table above (ignoring Mn++) if the chloride
-     transporter protein was turned off and only passive forces affected chloride ions? What
-     about the resting membrane potential? (6 pts) 
+   **c.** What is the probability that each neuron will spike once within the same 1 ms interval?
 
 
-2. _GHK equation with divalent ions (35 pts)._
+2. _Point Process Model Validation (30 pts)_
 
-   The ion channels which are active at the cell’s resting potential (“resting channels”) are in
-   real-life fairly selective and not particularly permeable to ions other than sodium and
-   potassium, and in particular not to divalent ions. Let’s imagine that that is not the case, and
-   that the resting membrane is also permeable to manganese. Further, let’s assume intra- and
-   extracellular concentrations as in the table above.
-
-   **a.** Use the Nernst equation to specify the equilibrium potential for Mn++. (2 pts)
- 
-   **b.** Derive the GHK equation for 3 monovalent ions and a divalent ion. (20 pts)
- 
-   **c.** Consider an unusual cell with the membrane permeabilities and internal and external
-   ionic concentrations in the table. What is the resting membrane potential of this cell? (13
-   pts)
+   We can describe the number of spikes that a neuron produces in a one second
+   window using a wide variety of random process models. Let’s refer to the
+   parameters of a given model as $$\theta$$, and a set of neural counts as
+   $$\mathbf{n}$$. We can evaluate the quality of the model by asking for which
+   model/parameters the likelihood of the data, $$P(\theta \mid \mathbf{n})$$,
+   is maximized. In this problem you will try to determine the right model for
+   the spikes from a synthetic neuron.
 
 
-3. _Simulating a neuron (65 pts)_ 
+     **a.** _Model Comparison (10 pts)_ Look at the data in the numpy data file
+     [hw4problem1A.npy](hw4problem1A.npy). This file contains two variables, `SpikeTimes` and `SpikeCounts`.
+     `SpikeTimes` is a list of spike times recorded in one experimental trial (each trial is 1
+     s for simplicity) from a neuron.  For each trial, for convenience, the number of spikes
+     is given in the corresponding element of `SpikeCount`. You can load the data into python
+     using `numpy.load()`:
 
-   For the following problems, you will make use of Python code that simulates a neuron. You
-   can find the hh() function in a [Jupyter
-   notebook](https://github.com/elec548/JupyterNotebooks/blob/master/HodgkinHuxleyNotebook.ipynb)
-   in the class github repository. You should use a time step, Δt  = 0.01 ms (except for **3b**).
+   ```python
+   import numpy as np
+   [SpikeTimes, SpikeCount] = np.load('hw4problem1A.npy')
+   ```
 
-   **a.** Consider 1 s of responses of the HH neuron. Plot the responses to a 0.2 uA/mm2
-   current step at time 0.2 s that lasts for 0.2 s. How many spikes are generated by this
-   input? (4 pts)
+     Consider two possible models for the number of spikes per trial:
 
-   **b.** Consider the input in **3a** with Δt  = 0. 1 ms, Δt  = 0.05 ms, and Δt  = 0.001 ms. How
-   are the results similar/different? (4 pts)
+   | Model | Parameters |
+   |:-------|:------|
+   | Gaussian | Mean = 10.2, Variance = 9.5  |
+   | Poisson  | Rate = 9.8  |
+   |--------------------|
 
-   **c.** Evaluate 0.2 s current injections at time 0.2 s. What is the “threshold voltage” for
-   this neuron? (You can either look for a “knee” in the voltage curve or use test currents of
-   increasing size to probe when an AP is triggered.) Tweak the parameters to decrease and
-   increase the threshold voltage by ~5 mV. What did you change, and by how much? (8 pts)
+     Using the data provided evaluate which set of parameters best describes the data. (_Hint:
+     You should calculate the likelihood of each model. In other words, calculate the
+     probability of, e.g., data from 1000 trials of the simulated data given one model or
+     the other?_)
 
-   **d.** Using the same time/length of current injection (0.2 s at 0.2 s), consider
-   depolarizations of 0 to 0.50 uA/mm2 (in 0.025 uA/mm2 steps). Count and plot the number of
-   spikes generated for each level. This is an “input-output” curve. How could you change the
-   slope of this curve? (8 pts)
+     **b.** Now split the data into training and validation sets, use the training sets
+     to train a Gaussian model and a Poisson model, and use the validation set to assess which
+     model fits the data best. (_Hint: You should use the maximum likelihood estimate for the
+     parameters of the models, which will be the sample mean and variance of the training data
+     for the Gaussian and the sample mean for the Poisson._)
 
-   **e.** Now modify the HH neuron to become a CST neuron (TCN Ch. 6 and/or included paper for
-   parameters). Plot the input-output curve of the CST neuron as in **3d**. How is it different?
-   (10 pts)
+     **c.** _Point Processes (10 pts)_ Consider the actual spike times from **(a)**
+     (given in the SpikeTimes list). If you were to model this neuron with a Poisson process,
+     would you use a constant or a time-varying rate over the 1 second window?
+     (Justify your answer with one or more plots.)
 
-   **f.** Plot and compare the response of an HH neuron and a CST neuron to an injected current
-   profile of 0 for 0.2 s, −0.050 uA/mm2 for 0.2 s, and then 0.15 uA/mm2 for 0.1 s (i.e., an
-   input current that goes low then high). How are they similar? How are they different? (6
-   pts)
+     **d.** _Fano Factor / ISI Distribution (10 pts)_ Consider the spike times returned by a
+     different neuron whos data are given in [hw4problem1C.npy](hw4problem1C.npy)
+     If you were to model this neuron with a Poisson process, would you use a constant or a
+     time- varying rate? Do the variance and mean of the count distribution have the
+     relationship you would expect for a Poisson process? What physiological process might you
+     observe in the spike times that would explain this? (_Hint: You’ll want to actually look
+     at the spike times. Generating a peri-stimulus time histogram (PSTH) showing the average
+     number of spikes in small bins of time will help explain your observations._)
 
-   **g.** (Random input.) Now you will consider input current profiles for the CST neuron (your
-   choice!) that are random. The input $$ x $$ should be 0.5 s of a smoothed Gaussian random
-   variable, where the smoothing is done using a 100 point moving average filter. After
-   smoothing, the input should have mean $$ \mu $$ and standard deviation $$ \sigma $$, where
-   $$ \mu \in \lbrace 0, 0.05, 0.1, 0.15, 0.2\rbrace \, \mu A/mm^2 $$ and $$ \sigma \in \lbrace
-   0, 0.01, 0.05, 0.1 \rbrace \, \mu A/mm^2 $$.  For each pair of parameters, construct 25
-   input current profiles. (For the zero variability input, it is only necessary to do one.)
-   For each of these 3 x 5 x 25 + 5 = 380 input "experiments", count the number of action
-   potentials produced by the neuron. Make a plot showing the the average number of generated
-   spikes as a function of the mean depolarization for each of the standard deviations (i.e., 4
-   lines)? How does the variance in the number of spikes per trial change with these different
-   parameters? 
-   
-   **Implementation Hint:** You will probably want to use the functions `np.random.randn` (for the Gaussian)
-   and `np.conv` (to calculate the smoothed signal remembering that you'll need to truncate the
-   convolution output to be the right length). Recall that if $$ y \sim \mathcal{N}(0,
-   \sigma^2) $$, then $$ \text{mean}(ay + b) = b $$ and $$ \text{var}(ay + b) = a^2\sigma^2 $$.
 
-   (25 pts)
+3. _Describing Real Data (60 pts)_
+
+   In this problem you are going to characterize the [neural activity recorded
+   on a multielectrode array in visual cortex](#datasource), found in
+   [hw4problem2.npy](hw4problem2.npy).  Spike times (in microseconds) for 10 neurons are given
+   in `spiketimes`, a 10 element numpy array, where each element is a numpy vector of
+   spiketimes.  The time-varying stimulus is described in the `stimulus` numpy array, where the
+   first column is timestamps (which follow regular 5 ms steps) and the second column is the
+   direction of motion (in degrees) of a moving bar. Stimulus directions are randomized, each
+   direction is maintained for 4 s, and directions are repeated 8 times. You can load the data
+   into python using `numpy.load()`:
+
+   ```python
+   import numpy as np
+   [stimulus, spiketimes] = np.load('hw4problem2.npy')
+   ```
+
+     **a.** (10 pts) Neural activity in visual cortex was recorded while the cat
+     was viewing drifting bars (like in the Hubel and Weisel video) that
+     cycled through different angles. The visual stimulus was constant for
+     4s, and then changed (the angle of the stimulus in 5 ms bins is given
+     in the stimulus vector). Plot the “tuning curve” for the activity from the 10th
+     neuron, show how the mean number of spikes varies as a function of the
+     direction of the moving bar. (The x-axis should be stimulus direction and the
+     y-axis should be “average spikes per second”.) Does this neuron have one
+     “preferred direction”?  Why might the directional tuning be shaped the way it
+     is?  
+
+     **b.** (10 pts) Calculate the tuning curves for all the neurons. Plot a histogram
+     of the “preferred direction” (i.e., direction of stimulus which produces
+     maximum average spiking) of the neurons. Plot a histogram of the “maximum
+     firing rate” (i.e., the average firing rate for the preferred direction).
+
+     **c.** (10 pts) Select the neuron with the largest maximum firing rate.
+     For each stimulus direction, calculate the mean spiking rate and the variance
+     from this mean in the number of spikes observed in one stimulus presentation.
+     Calculate the Fano factor for each stimulus direction and compare to what is
+     expected for a Poisson process. Repeat for the neuron with the largest average
+     (i.e., across all directions) firing rate.  
+
+     **d.** (10 pts) For the neurons in part (c), create ISI distributions for
+     spikes during stimuli in the preferred direction. Compare this to the ISI
+     distribution expected under a Poisson approximation.
+
+     **e.** (20 pts) For the neurons in part (c), use the time-rescaling
+     theorem to renormalize the ISIs for all stimulus directions (i.e., assuming a
+     piece-wise constant inhomogeneous Poisson process). Plot the resulting ISI
+     distribution. Conduct a goodness-of-fit test on the spikes. Is the piece-wise
+     Poisson model a good one?
+
+
+### <a name="datasource"></a> Data Source Note:
+This data is courtesy of Tim Blanche, UC Berkeley. He captured single and multiunit recordings
+in the primary visual cortex of cats during viewing of simple and complex stimuli.  It has been
+shared for public use on the CRCNS.org website as data set “pvc3”, and we are using the data
+from the “drifting bar” section.
