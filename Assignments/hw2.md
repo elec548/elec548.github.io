@@ -80,7 +80,7 @@ point processes in general and the Poisson process in particular._
 
      **d.** _Fano Factor / ISI Distribution (10 pts)_ Consider the spike times returned by a
      different neuron whos data are given in [hw2problem2D.npy](hw2problem2D.npy) (the same
-     data are given in Matlab format in [hw2problem2D.mat](hw4problem2D.mat)).
+     data are given in Matlab format in [hw2problem2D.mat](hw2problem2D.mat)).
      Again, you can load the data into python using `numpy.load()`:
 
    ```python
