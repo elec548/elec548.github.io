@@ -42,7 +42,7 @@ point processes in general and the Poisson process in particular._
 
 
      **a.** _Model Comparison (10 pts)_ Look at the data in the numpy data file
-     [hw4problem1A.npy](hw4problem1A.npy). This file contains two variables, `SpikeTimes` and `SpikeCounts`.
+     [hw2problem2A.npy](hw2problem2A.npy). This file contains two variables, `SpikeTimes` and `SpikeCounts`.
      `SpikeTimes` is a list of spike times recorded in one experimental trial (each trial is 1
      s for simplicity) from a neuron.  For each trial, for convenience, the number of spikes
      is given in the corresponding element of `SpikeCount`. You can load the data into python
@@ -50,9 +50,10 @@ point processes in general and the Poisson process in particular._
 
    ```python
    import numpy as np
-   [SpikeTimes, SpikeCount] = np.load('hw4problem1A.npy')
+   [SpikeTimes, SpikeCount] = np.load('hw4problem2A.npy')
    ```
-
+     
+     Note that you can find these data in Matlab format in [hw2problem2A.mat](hw2problem2A.mat).
      Consider two possible models for the number of spikes per trial:
 
    | Model | Parameters |
@@ -78,7 +79,15 @@ point processes in general and the Poisson process in particular._
      (Justify your answer with one or more plots.)
 
      **d.** _Fano Factor / ISI Distribution (10 pts)_ Consider the spike times returned by a
-     different neuron whos data are given in [hw4problem1C.npy](hw4problem1C.npy)
+     different neuron whos data are given in [hw2problem2D.npy](hw2problem2D.npy) (the same
+     data are given in Matlab format in [hw2problem2D.mat](hw4problem2D.mat)).
+     Again, you can load the data into python using `numpy.load()`:
+
+   ```python
+   import numpy as np
+   [SpikeTimes, SpikeCount] = np.load('hw4problem2D.npy')
+   ```
+
      If you were to model this neuron with a Poisson process, would you use a constant or a
      time- varying rate? Do the variance and mean of the count distribution have the
      relationship you would expect for a Poisson process? What physiological process might you
@@ -91,8 +100,9 @@ point processes in general and the Poisson process in particular._
 
    In this problem you are going to characterize the [neural activity recorded
    on a multielectrode array in visual cortex](#datasource), found in
-   [hw4problem2.npy](hw4problem2.npy).  Spike times (in microseconds) for 10 neurons are given
-   in `spiketimes`, a 10 element numpy array, where each element is a numpy vector of
+   [hw2problem3.npy](hw2problem3.npy) (or [hw2problem3.mat](hw2problem3.mat)).
+   Spike times (in microseconds) for 10 neurons are given in `spiketimes`, a 10
+   element numpy array, where each element is a numpy vector of
    spiketimes.  The time-varying stimulus is described in the `stimulus` numpy array, where the
    first column is timestamps (which follow regular 5 ms steps) and the second column is the
    direction of motion (in degrees) of a moving bar. Stimulus directions are randomized, each
@@ -101,7 +111,7 @@ point processes in general and the Poisson process in particular._
 
    ```python
    import numpy as np
-   [stimulus, spiketimes] = np.load('hw4problem2.npy')
+   [stimulus, spiketimes] = np.load('hw2problem3.npy')
    ```
 
      **a.** (10 pts) Neural activity in visual cortex was recorded while the cat
