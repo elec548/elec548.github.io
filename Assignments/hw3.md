@@ -5,7 +5,7 @@ title: Homework 3
 
 ## Homework 5 (100 pts)
 
-_This problem set is due Wednesday (10/12/2018) at 11:59pm. Please turn in your work by uploading to
+_This problem set is due Friday (10/12/2018) at 11:59pm. Please turn in your work by uploading to
 Canvas. f you have questions, please post them on the course forum, rather than emailing the
 course staff. This will allow other students with the same question to see the response and any
 ensuing discussion. The goal of this problem set is to review classification by performing
@@ -77,5 +77,3 @@ targets (locations in the vector targets); the target index for each trial is in
      (number of neurons) by randomly choosing neurons to be dropped 20 times. Plot decoding
      accuracy as a function of the number of neurons available to the decoder. Briefly describe
      what you see?
- 
-
