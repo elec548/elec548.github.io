@@ -16,9 +16,9 @@ a write-up for this homework assignment._
 
 ### Description of data set
 The dataset for this problem is linked in the numpy file
-[SpikeData05.npz](SpikeData05.npz), which contains numpy arrays
-`SpikeWaveforms` and ~~`RawData`~~. (The raw data was too large to upload. It
-is available on request.) You can load it by calling
+[SpikeData05.npz](SpikeData05.npz) ([SpikeData05.mat](SpikeData05.mat)), which
+contains numpy arrays `SpikeWaveforms` and ~~`RawData`~~. (The raw data was too
+large to upload. It is available on request.) You can load it by calling
 
 ```python
 import numpy as np
