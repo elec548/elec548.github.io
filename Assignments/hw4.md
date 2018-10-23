@@ -194,7 +194,8 @@ and the recorded portion of the action potential waveform ("snippet") is in a
 
     You will use this package to define and train a model of the 4-channel
     waveform peaks. To make this problem more interesting, load data from the
-    file [SpikeData12.npz](SpikeData12.npz), and find the waveform peaks as in
+    file [SpikeData12.npz](SpikeData12.npz)
+    ([SpikeData12.mat](SpikeData12.mat)), and find the waveform peaks as in
     **(1)**.
 
     **a.** Use the first 5000 snippet-peaks (i.e., $$\mathbf{x}_n \in
