@@ -1,9 +1,9 @@
 ---
 layout: mathjax
-title: Homework 7
+title: Homework 5
 ---
 
-## Homework 7 (100 pts)
+## Homework 5 (100 pts)
 
 _This problem set is due Tuesday (11/13/2018) at 11:59pm. Please turn in your
 work by uploading to Canvas. f you have questions, please post them on the
@@ -16,12 +16,12 @@ a write-up for this homework assignment._
 
 ### Description of data sets
 For Problem 1 of this assignment, you will again use the reach data from HW 3
-(in file `ReachData.npz` on Canvas).  For Problem 2, you will use the datasets from HW4,
-[SpikeData05.npz](SpikeData05.npz)([SpikeData05.mat](SpikeData05.mat)) and 
-[SpikeData12.npz](SpikeData12.npz)([SpikeData12.mat](SpikeData12.mat)),
-which contain numpy arrays `SpikeWaveforms` and ~~`RawData`~~. (The raw data
-was too large to upload. It is available on request.) You can load it by
-calling
+(in file `ReachData.npz` on Canvas).  For Problem 2, you will use the datasets
+from HW4, [SpikeData05.npz](SpikeData05.npz) and
+[SpikeData12.npz](SpikeData12.npz), which contain numpy arrays `SpikeWaveforms`
+and ~~`RawData`~~. (The raw data was too large to upload. It is available on
+request.) The  corresponding Matlab files are
+[SpikeData05.mat](SpikeData05.mat) and [SpikeData12.mat](SpikeData12.mat).
 
 1. _Visualization of high-dimensional neural activity using PCA (30 pts)_
   For this problem, you will again use the reach data from HW 5 (in file
@@ -92,10 +92,10 @@ calling
 3. _Comparing PCA, P-PCA, and FA (30 pts)_
     To answer these questions, please begin by downloading and running the
     Jupyter notebook for the problem
-    [Homework7Problem3.ipynb](https://elec548.github.io/Assignments/Homework7Problem3.ipynb).
+    [Homework5Problem3.ipynb](https://elec548.github.io/Assignments/Homework5Problem3.ipynb).
     For PCA and P-PCA, the notebook makes a plot showing:
       - Each data point $$x_n$$ as a black dot in its native 2-D space
-      - The mean, $\mu$  as a green point
+      - The mean, $$\mu$$  as a green point
       - The PC space found by either PCA or P-PCA (which is one dimensional)
       plotted as a line segment
       - The projection of each data point into the PC space as red points
