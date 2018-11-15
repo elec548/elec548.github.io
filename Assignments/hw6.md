@@ -1,9 +1,9 @@
 ---
 layout: mathjax
-title: Homework 8
+title: Homework 6
 ---
 
-## Homework 8 (100 pts)
+## Homework 6 (100 pts)
 
 _This problem set is due 11/29/2018. Please turn in your
 work by uploading to Canvas. If you have questions, please post them on the
