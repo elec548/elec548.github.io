@@ -59,7 +59,7 @@ prior model of animal movement.
   \end{equation*}
   $$
   You will find the parameters for these neurons in the file
-  [hw6problem3.npz](hw6problem3.npz).
+  [hw6problem3.npz](hw6problem3.npz) ([hw6problem3.mat](hw6problem3.mat)).
   The vectors `MaxRates` (in spikes per second), `FieldCenters`, and `FieldWidths`
   correspond to the values of $$r_{max}$$, $$\mu$$, and $$\sigma$$ for the
   neurons, respectively. Spike counts for 250 milleseconds of neural activity is
