@@ -75,8 +75,12 @@ request.) The  corresponding Matlab files are
     the square-rooted eigenvalues - how many dominant eigenvalues do you
     think there are?
 
-    **e.** Plot the mean and the first 2 principal components of the tetrode
-    principal components. How do the values for the first channel differ
+    **e.** Plot and compare the mean and the first 2 principal component vectors
+    *corresponding to the first tetrode channel*
+    when PCA is done only on the single channel data versus when the PCA is done
+    on the full 160-dimensional tetrode data. of the tetrode
+    principal components. (These will both be sets of 1x40 vectors!)
+    How do the values for the first channel differ
     from the values in the single channel analysis from (c)? What is the
     difference in the fraction of the variance in the first tetrode channel
     captured by the 4 channel PCA vs. the single channel PCA? What about
@@ -92,7 +96,8 @@ request.) The  corresponding Matlab files are
 3. _Comparing PCA, P-PCA, and FA (30 pts)_
     To answer these questions, please begin by downloading and running the
     Jupyter notebook for the problem
-    [Homework5Problem3.ipynb](https://elec548.github.io/Assignments/Homework5Problem3.ipynb).
+    [Homework5Problem3.ipynb](https://elec548.github.io/Assignments/Homework5Problem3.ipynb)
+    (a viewable link is [here](https://github.com/elec548/elec548.github.io/blob/master/Assignments/Homework5Problem3.ipynb)).
     For PCA and P-PCA, the notebook makes a plot showing:
       - Each data point $$x_n$$ as a black dot in its native 2-D space
       - The mean, $$\mu$$  as a green point

@@ -5,20 +5,18 @@ title: Homework 8
 
 ## Homework 8 (100 pts)
 
-_This problem set is due the last day of classes (12/2/2016), but can be
-turned in late with no penalty. Note that we will drop the lowest score
-assignment, so this is optional if you choose not to do it. Please turn in your
-work by uploading to Canvas. f you have questions, please post them on the
+_This problem set is due 11/29/2018. Please turn in your
+work by uploading to Canvas. If you have questions, please post them on the
 course forum, rather than emailing the course staff. This will allow other
 students with the same question to see the response and any ensuing discussion.
-The goal of this problem set is to review clustering through the process of
-spike sorting action potentials data. You should submit both commented code and
-a write-up for this homework assignment._
+The goal of this problem set is to review Kalman filtering (continuous time latent
+variables). You should submit both commented code and a write-up for this
+homework assignment._
 
 
 The goal of this assignment is to carry out continuous neural decoding, first
-just using Bayes rule and then (for extra credit) by using a _particle filter_
-to account for a prior model of animal movement.
+just using Bayes rule and then by using a _particle filter_ to account for a
+prior model of animal movement.
 
 1. _Review of generative models (30 pts)_
   Write down simple pseudocode for the generation of simulated data for the
@@ -61,7 +59,7 @@ to account for a prior model of animal movement.
   \end{equation*}
   $$
   You will find the parameters for these neurons in the file
-  [hw8problem3.npz](hw8problem3.npz).
+  [hw6problem3.npz](hw6problem3.npz).
   The vectors `MaxRates` (in spikes per second), `FieldCenters`, and `FieldWidths`
   correspond to the values of $$r_{max}$$, $$\mu$$, and $$\sigma$$ for the
   neurons, respectively. Spike counts for 250 milleseconds of neural activity is
