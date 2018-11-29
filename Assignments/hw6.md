@@ -51,7 +51,8 @@ prior model of animal movement.
       $$x$$? What are the first and second derivatives of the log likelihood with
       respect to $$x$$? 
 
-      **(ii.)** Now, consider two situations. In the first situation, let's assume that $$g(x)$$ is
+      Now, consider two situations. 
+      **(ii.)** In the first situation, let's assume that $$g(x)$$ is
       the same for each neuron, and that $$N$$ (the number of neurons) is large. What 
       conditions on $$g(x)$$ would imply that the log likelihood was concave (i.e.,
       the second derivative was negative everywhere)? Hint: make use of the weak law
@@ -59,7 +60,7 @@ prior model of animal movement.
       $$\frac{\sum_{n=1}^N x_n}{N} \approx \mu$$, where $$\mu$$ is the mean of the
       $$x_n$$ (and remember what the mean of a Poisson process is!).
 
-      **(iii.)*** In the second situation, answer this question: what conditions on g(x) would
+      **(iii.)** In the second situation, answer this question: what conditions on g(x) would
       ensure that $$e^{-g(x)}$$ is both convex and log-concave (i.e., $$log(e^{-g(x)})$$
       is concave)? These constraints come from 
       ["Maximum likelihood estimation of cascade point-process neural encoding models"](https://www.tandfonline.com/doi/abs/10.1088/0954-898X_15_4_002).
