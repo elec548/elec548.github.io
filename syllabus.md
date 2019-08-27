@@ -14,7 +14,7 @@ sorting, decoding, characterization of neural systems, and field potential analy
 
 ## Instructor: [Caleb Kemere](http://rnel.rice.edu/people/calebkemere)
 
-## Graders: [Shayok Dutta]()
+## Graders: [Joshua Chu]() and [Sibo Gao]()
 
 ## Location: BRC286
 

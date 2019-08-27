@@ -15,7 +15,6 @@ distributed action in the brain and to think about how best we can understand
 the process of cortical computaiton. The second goal is to review molecular
 neurobiology._
 
-
 1. _Organization of the brain - short answer (a few sentences, 5 pts)_
    In the 1860s, Pierre Paul Broca described how patients with lesions in the posterior left
    frontal lobe (what is now called “Broca’s area”) were capable of understanding language but
@@ -99,7 +98,7 @@ neurobiology._
      Consider three phases - when the membrane potentail is below threshold, and after it crosses
      threshold, after it begins to return (i.e., after the peak). (10 pts)
 
-6. _Synapses (40 pts)_
+6. _Synapses (30 pts)_
    
    Refer to _PNS_ Ch. 10 and Ch. 12 and the Lecture 3 slides.
      
@@ -115,7 +114,7 @@ neurobiology._
      What kind of synapses do cones make onto bipolar cells? How do you think this affects
      vision.
 
-     **d.** (Hard) An important discovery was that synapses release neurotransmitter in
+     **d.** (Hard - Not Scored) An important discovery was that synapses release neurotransmitter in
      quanta, which we now know correspond to vesicles. As part of the development of the quantal
      theory of neurotransmission, it was observed that the size of post-synaptic potentials
      increased in steps that were the same size as "mini-PSCs", small post-synaptic currents

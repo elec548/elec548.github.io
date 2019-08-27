@@ -39,11 +39,11 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Time** -- Tuesdays/Thursdays 9:25-10:40 AM
 
-**Canvas** -- [https://canvas.rice.edu/courses/14295](https://canvas.rice.edu/courses/14295)
+**Canvas** -- [https://canvas.rice.edu/courses/14295](https://canvas.rice.edu/courses/22663)
 
 **Syllabus** -- [here](/syllabus.html)
 
-**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/tghn8utpq503fue/AAAe5WwYLA0Lz0L1ie3EkkQza?dl=0)
+**Lectures:** [link to dropbox folder]()
 
 **Course Notes**
 
