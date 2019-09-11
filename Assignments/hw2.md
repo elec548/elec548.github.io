@@ -30,7 +30,26 @@ point processes in general and the Poisson process in particular._
    **c.** What is the probability that each neuron will spike once within the same 1 ms interval?
 
 
-2. _Point Process Model Validation (30 pts)_
+2. _Bayesian Analysis of the Poisson Process (30 pts)_
+
+   _(Murphy, 2012, problems 3.6 and 3.7)_ 
+
+   **a.** The Poisson **pmf** is defined as $$\text{Poi}(x \mid \lambda) = e^{-\lambda}
+   \frac{\lambda^x}{x!}$$, for $$x \in \lbrace 0, 1, 2, \ldots\rbrace$$ where $$\lambda > 0$$
+   is the rate parameter. Derive the Maximum Likelihood Estimate of the rate parameter when
+   given a series of observations $$D = \lbrace x_1, x_2, \ldots, x_N\rbrace$$. (Hint: solve
+   for the maximum of the log of the likelihood.)
+
+   **b. (Bayesian parameter estimation)** Derive the posterior $$p(\lambda \mid D)$$ assuming a
+   conjugate prior $$p(\lambda) = \text{Ga}(\lambda \mid a, b) \propto \lambda^{a-1}
+   e^{-\lambda b}$$. Hint: the posterior is also a Gamma distribution!!
+
+   **c.** What does the posterior mean tend to as $$a \to 0$$ and $$b \to 0$$. Hint: Recall
+   that the mean of a $$\text{Ga}(a,b)$$ distribution is $$a/b$$. (So if you're doing a crazy
+   sum, you're doign it wrong.)
+
+
+3. _Point Process Model Validation (30 pts)_
 
    We can describe the number of spikes that a neuron produces in a one second
    window using a wide variety of random process models. Let’s refer to the
@@ -96,7 +115,7 @@ point processes in general and the Poisson process in particular._
      number of spikes in small bins of time will help explain your observations._)
 
 
-3. _Describing Real Data (60 pts)_
+4. _Describing Real Data (60 pts)_
 
    In this problem you are going to characterize the [neural activity recorded
    on a multielectrode array in visual cortex](#datasource), found in
