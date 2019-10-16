@@ -5,7 +5,7 @@ title: Homework 4
 
 ## Homework 4 (100 pts)
 
-_This problem set is due Friday (10/26/2016) at 11:59pm. Please turn in your
+_This problem set is due Wednesday (10/30/2019) at 11:59pm. Please turn in your
 work by uploading to Canvas. f you have questions, please post them on the
 course forum, rather than emailing the course staff. This will allow other
 students with the same question to see the response and any ensuing discussion.
@@ -209,7 +209,13 @@ and the recorded portion of the action potential waveform ("snippet") is in a
     **b.**  Find the cluster assignments for the next 5000 snippet-peaks. You will use these as
     test data to evaluate how many clusters there should be in the data. Calculate the model
     likelihood of the second set of 5000 snippet-peaks using the parameters you found in
-    **(a)**. Now, repeat the EM-learning in **(a)**, but with $$K = 8, 9, \ldots,
-    20$$. What is the likelihood of the test data for each model? Which model
-    would you use if you wanted only well-clustered neurons for your analysis?
-    For the most likely value of $$K$$, plot the cluster assignments as in (a).
+    **(a)**. The `score_samples()` function returns the log likelihood of one or more data
+    points. The `score()` function returns the average log likelihood for many data points,
+    which represents the model quality we care about.  Now, repeat the EM-learning in **(a)**,
+    but with $$K = 8, 9, \ldots, 20$$. What is the likelihood of the test data for each model?
+    Which model would you use if you wanted only well-clustered neurons for your analysis?  For
+    the most likely value of $$K$$, plot the cluster assignments as in (a).
+
+    **c.** Train models with a full covariance matrix as in **(a)** and a diagonal covariance
+    matrix (use the `covariance_type='diagonal'` option). Compare the model likelihoods on test
+    data. Which model does a better job?
