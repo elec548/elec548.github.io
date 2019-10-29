@@ -188,7 +188,7 @@ and the recorded portion of the action potential waveform ("snippet") is in a
 
    ```python
    from sklearn import mixture
-   gmix = mixture.GMM(n_components=2, covariance_type='full')
+   gmix = mixture.GaussianMixture(n_components=2, covariance_type='full')
    gmix.fit(peaks)
    ```
 
