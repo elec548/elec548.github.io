@@ -36,6 +36,7 @@ using one of the techniques from the class on a topic of their own interest
 ### Clustering
   - [Wild et al 2012 "Performance comparison of extracellular spike sorting algorithms for single-channel recordings."](FinalProject/Wild2012.pdf)
   - [Calabrese and Paninski 2011 "Kalman filter mixture model for spike sorting of non-stationary data."](https://www.sciencedirect.com/science/article/pii/S0165027010006655)
+  - [Zhang, Lee, Rozell and Singer "Sub-second dynamics of theta-gamma coupling in hippocampal CA1."](https://elifesciences.org/articles/44320)
 
 ### Dimensionality Reduction
   - [Yu et al 2009 "Gaussian-process factor analysis for low-dimensional single-trial analysis of neural population activity."](FinalProject/Yu2009.pdf)
