@@ -63,7 +63,7 @@ prior model of animal movement.
       is concave)? These constraints come from 
       ["Maximum likelihood estimation of cascade point-process neural encoding models"](https://www.tandfonline.com/doi/abs/10.1088/0954-898X_15_4_002).
 
-3. _Single step of dynamical system estimation (40 pts)_
+3. **[NOT FINAL]** _Single step of dynamical system estimation (40 pts)_
   Consider a set of 10 neurons whose firing can be described as function of the form
   $$
   \begin{equation*}
