@@ -63,7 +63,7 @@ prior model of animal movement.
       is concave)? These constraints come from 
       ["Maximum likelihood estimation of cascade point-process neural encoding models"](https://www.tandfonline.com/doi/abs/10.1088/0954-898X_15_4_002).
 
-3. **[NOT FINAL]** _Single step of dynamical system estimation (40 pts)_
+3. _Single step of dynamical system estimation (30 pts)_
   Consider a set of 10 neurons whose firing can be described as function of the form
   $$
   \begin{equation*}
@@ -87,3 +87,30 @@ prior model of animal movement.
     using just your prior distribution and using both the prior distribution and
     the observations of neural activity. What is the maximum _a posteriori_
     position of the rat?
+
+
+4. _Using a particle filter (30 pts)_
+   Load up the Jupyter notebook [ParticleFilter.ipynb](ParticleFilter.ipynb). This notebook
+   implements a particle filter tracker for simulated neural activity from the rodent
+   hippocampus. Neurons in this area have receptive fields for locations in space that are
+   approximately Gaussian. Because this shape is non-linear (and non-monotonic) in the space
+   axis, the standard Kalman filter will perform very poorly. However, the notebook
+   implementation is for Gaussian observations. 
+   
+   **a.** Change the observations to be Poisson by changing how each neuron's simulated data is
+   generated (in cell 6) and the conditional probability of $$ p(observation | z_t) $$ to be
+   Poisson (in cell 10). (Hint - you might find `np.random.poisson` and `scipy.stats.poisson.logpmf`
+   useful.) How does the mean square error differ when you make this change from
+   Gaussian to Poisson? Is this what you expected? How could you change the Gaussian model to
+   reduce its MSE?
+
+   **b.** Experiment with the number of neurons and the maximum firing rates. How does the
+   error change if the number of neurons decreases or increases by a factor of 2? How does the
+   error change if the maximum firing rate decreases or increases by a factor of 2?
+
+   **c.** Experiment with the number of particles. How does the error change if the number of
+   particles used for simulation changes by a factor of 10 (i.e., 10, 100, or 1000)?
+
+   **d.** Experiment with the state dynamics model. What happens to the error if the standard
+   deviation of the "innovation" (the noise term added to the state at each time step)
+   increases or decreases by a factor of 2?
