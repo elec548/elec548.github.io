@@ -50,13 +50,15 @@ prior model of animal movement.
       respect to $$x$$? 
 
       Now, consider two situations. 
+
       **(ii.)** In the first situation, let's assume that $$g(x)$$ is
       the same for each neuron, and that $$N$$ (the number of neurons) is large. What 
       conditions on $$g(x)$$ would imply that the log likelihood was concave (i.e.,
       the second derivative was negative everywhere)? Hint: make use of the weak law
       of large numbers, for independent identically distributed $$x_n$$, 
       $$\frac{\sum_{n=1}^N x_n}{N} \approx \mu$$, where $$\mu$$ is the mean of the
-      $$x_n$$ (and remember what the mean of a Poisson process is!).
+      $$x_n$$ (and remember what the mean of a Poisson process is!). Specifically,
+      make the large numbers substitution **before** taking any derivatives!
 
       **(iii.)** In the second situation, answer this question: what conditions on g(x) would
       ensure that $$e^{-g(x)}$$ is both convex and log-concave (i.e., $$log(e^{-g(x)})$$
