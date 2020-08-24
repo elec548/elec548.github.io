@@ -35,11 +35,11 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Instructor** -- Caleb Kemere (caleb.kemere@rice.edu)
 
-**Location** -- BRC286
+**Location** -- BRC284
 
-**Time** -- Tuesdays/Thursdays 9:25-10:40 AM
+**Time** -- Tuesdays/Thursdays 9:40-11 AM
 
-**Canvas** -- [https://canvas.rice.edu/courses/14295](https://canvas.rice.edu/courses/22663)
+**Canvas** -- [https://canvas.rice.edu/courses/32885](https://canvas.rice.edu/courses/32885)
 
 **Syllabus** -- [here](/syllabus.html)
 
