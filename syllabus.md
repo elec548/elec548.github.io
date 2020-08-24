@@ -16,7 +16,7 @@ sorting, decoding, characterization of neural systems, and field potential analy
 
 ## Graders: [TBD]()
 
-## Location: BRC28r46
+## Location: BRC284
 
 ## Time: Tuesdays/Thursdays 9:40-11 AM
 
