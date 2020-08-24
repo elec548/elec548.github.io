@@ -4,7 +4,7 @@ title: ELEC548 - Syllabus
 group: navigation
 ---
 
-# _ELEC 548 / 483 Syllabus - 2018_
+# _ELEC 548 / 483 Syllabus - 2020_
 
 This course covers advanced statistical signal processing and machine learning approaches for
 modern neuroscience data (primarily many-channel spike trains).  Topics include latent variable
@@ -14,11 +14,11 @@ sorting, decoding, characterization of neural systems, and field potential analy
 
 ## Instructor: [Caleb Kemere](http://rnel.rice.edu/people/calebkemere)
 
-## Graders: [Joshua Chu]() and [Sibo Gao]()
+## Graders: [TBD]()
 
-## Location: BRC286
+## Location: BRC28r46
 
-## Time: Tuesdays/Thursdays 9:25-10:40
+## Time: Tuesdays/Thursdays 9:40-11 AM
 
 ## Prerequisites: 
 Basic circuits (ELEC 242 or equivalent), Probability (ELEC 303 or equivalent), Linear algebra
