@@ -5,7 +5,7 @@ title: Homework 1
 
 ## Homework 1
 
-_This problem set is due Thursday (9/6/2018) at 11:58 pm. Please turn in your work by uploading to
+_This problem set is due Friday (9/11/2020) at 11:58 pm. Please turn in your work by uploading to
 Canvas. Preferably, I'd love to see it turned in as a Jupyter notebook with code
 shown for problem 5! If you have questions, please post them on the course
 forum, rather than emailing the course staff. This will allow other students
@@ -46,14 +46,19 @@ neurobiology._
    system? At which of these levels do you think they have the best chance of achieving their
    goal?
 
-4. _Neurons and Glia (10 pts)_
+4. _Distributed Functions (10 pts)_  Watch the Neuralink "Progress Update"
+[https://www.youtube.com/watch?v=DVvmgjBL74w](https://www.youtube.com/watch?v=DVvmgjBL74w).
+What examples of applications of their technology would be made challenging by
+the distributed aspects of some mental processes?
+
+5. _Neurons and Glia (10 pts)_
 
    Our estimates of the numbers of neurons and glia in the brain have changed over time. (If
    your curious about the history of this, see [Bartheld et al, _J Comp Neuro_ 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5063692/).
    Glia now seem potentially less important than they once did. [This paper (Sherwood et al, _PNAS_ 2006](http://www.pnas.org/content/103/37/13606.short)
    suggests one reason why there are more glia per neuron in humans than other primates. What is it?
 
-5. _Membrane Potentials and the Nernst Equation (50 pts)_
+6. _Membrane Potentials and the Nernst Equation (50 pts)_
 
    Refer to _PNS_ Chapter 7 for an explanation of the Nernst and Goldman equations.
    As discussed in class, a neuron’s resting potential is determined by the relative intra- and
@@ -98,7 +103,7 @@ neurobiology._
      Consider three phases - when the membrane potentail is below threshold, and after it crosses
      threshold, after it begins to return (i.e., after the peak). (10 pts)
 
-6. _Synapses (30 pts)_
+7. _Synapses (30 pts)_
    
    Refer to _PNS_ Ch. 10 and Ch. 12 and the Lecture 3 slides.
      
