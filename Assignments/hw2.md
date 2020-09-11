@@ -5,11 +5,12 @@ title: Homework 2
 
 ## Homework 2 (120 pts)
 
-_This problem set is due Monday (9/23/2019) at 11:59 pm. Please turn in your work by uploading to
-Canvas. f you have questions, please post them on the course forum, rather than
-emailing the course staff. This will allow other students with the same question to see the
-response and any ensuing discussion. The goal of this problem set is to review the basics of
-point processes in general and the Poisson process in particular._
+_This problem set is due Friday (9/18/2020) at 11:59 pm. Please turn in your
+work by uploading to Canvas. f you have questions, please post them on the
+course forum, rather than emailing the course staff. This will allow other
+students with the same question to see the response and any ensuing discussion.
+The goal of this problem set is to review the basics of point processes in
+general and the Poisson process in particular._
 
 
 1. _Properties of the Poisson Random Processes (30 pts)_
