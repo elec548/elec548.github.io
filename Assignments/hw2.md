@@ -143,7 +143,7 @@ general and the Poisson process in particular._
      direction of the moving bar. (The x-axis should be stimulus direction and the
      y-axis should be “average spikes per second”.) Does this neuron have one
      “preferred direction”?  Why might the directional tuning be shaped the way it
-     is?  
+     is? (*Hint:* Is there some sort of symmetry for opposite directions?)  
 
      **b.** (10 pts) Calculate the tuning curves for all the neurons. Plot a histogram
      of the “preferred direction” (i.e., direction of stimulus which produces
