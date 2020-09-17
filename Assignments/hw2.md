@@ -161,11 +161,12 @@ general and the Poisson process in particular._
      spikes during stimuli in the preferred direction. Compare this to the ISI
      distribution expected under a Poisson approximation.
 
-     **e.** (20 pts) For the neurons in part (c), use the time-rescaling
-     theorem to renormalize the ISIs for all stimulus directions (i.e., assuming a
+     **e.** (20 pts) For the neurons in part (c), use the [time-rescaling
+     theorem](https://www.mitpressjournals.org/doi/abs/10.1162/08997660252741149)
+     to renormalize the ISIs for all stimulus directions (i.e., assuming a
      piece-wise constant inhomogeneous Poisson process). Plot the resulting ISI
      distribution. Conduct a goodness-of-fit test on the spikes. Is the piece-wise
-     Poisson model a good one?
+     Poisson model a good one? 
 
 
 ### <a name="datasource"></a> Data Source Note:
