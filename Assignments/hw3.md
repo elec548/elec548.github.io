@@ -5,29 +5,32 @@ title: Homework 3
 
 ## Homework 5 (100 pts)
 
-_This problem set is due Friday (10/11/2019) at 11:59pm. Please turn in your work by uploading to
-Canvas. f you have questions, please post them on the course forum, rather than emailing the
-course staff. This will allow other students with the same question to see the response and any
-ensuing discussion. The goal of this problem set is to review classification by performing
-“discrete decoding” of some neural data. You should submit both commented code and a write-up
-for this homework assignment._
+_This problem set is due Monday (10/5/2020) at 11:59pm. Please turn in your
+work by uploading to Canvas. If you have questions, please post them on the
+course forum, rather than emailing the course staff. This will allow other
+students with the same question to see the response and any ensuing discussion.
+The goal of this problem set is to review classification by performing
+“discrete decoding” of some neural data. You should submit both commented code
+and a write-up for this homework assignment._
 
 
 ### Description of data set
 
-The data (in file `ReachData.npz` on Canvas) is in a struct array “r” of size 1127. Each
-element in the array contains data on one trial. Time stamps for each spike in trial
-i and neuron j are given in r(i).unit(j).spikeTimes (in ms relative to trial start). Other
-relevant members of the structure for this homework assignment are: r(i).timeTouchHeld (the
-time the reach target appears and movement planning nominally begins), r(i).timeGoCue (the time
-the animal is cued to move and planning nominally ends), r(i).timeTargetAcquire (the time
-movement ends). A big part of all three parts of this assignment will be writing code that
-creates _spike count vectors_. These will be vectors of size $$Nx1$$, where $$N$$ is the total
-number of neurons (i.e., 190). All of the classification will be on these vectors, and you
-should combine across neurons _by taking the product of probabilities_ (not by doing anything
-that would collapse across neurons or mix their information). There are 8 different reach
-targets (locations in the vector targets); the target index for each trial is in the vector
-`cfr`.
+The data (in file `ReachData.npz` on Canvas) is in a struct array “r” of size
+1127. Each element in the array contains data on one trial. Time stamps for
+each spike in trial i and neuron j are given in r(i).unit(j).spikeTimes (in ms
+relative to trial start). Other relevant members of the structure for this
+homework assignment are: r(i).timeTouchHeld (the time the reach target appears
+and movement planning nominally begins), r(i).timeGoCue (the time the animal is
+cued to move and planning nominally ends), r(i).timeTargetAcquire (the time
+movement ends). A big part of all three parts of this assignment will be
+writing code that creates _spike count vectors_. These will be vectors of size
+$$Nx1$$, where $$N$$ is the total number of neurons (i.e., 190). All of the
+classification will be on these vectors, and you should combine across neurons
+_by taking the product of probabilities_ (not by doing anything that would
+collapse across neurons or mix their information). There are 8 different reach
+targets (locations in the vector targets); the target index for each trial is
+in the vector `cfr`.
 
 ### Questions
 
