@@ -16,14 +16,31 @@ and a write-up for this homework assignment._
 
 ### Description of data set
 
-The data (in file `ReachData.npz` on Canvas) is in a struct array “r” of size
-1127. Each element in the array contains data on one trial. Time stamps for
+The data (in file `ReachData.npz` on Canvas) is in a struct array “r” of size 1127.
+You can see the variables in a `.npz` file by querying the `.files` class element.
+
+```
+import numpy as np
+ReachData = np.load('ReachData.npz')
+
+print(ReachData.files)
+
+r = ReachData['r']
+
+```
+Each element in the array contains data on one trial. Time stamps for
 each spike in trial i and neuron j are given in r(i).unit(j).spikeTimes (in ms
 relative to trial start). Other relevant members of the structure for this
 homework assignment are: r(i).timeTouchHeld (the time the reach target appears
 and movement planning nominally begins), r(i).timeGoCue (the time the animal is
 cued to move and planning nominally ends), r(i).timeTargetAcquire (the time
-movement ends). A big part of all three parts of this assignment will be
+movement ends). 
+
+```
+
+```
+
+A big part of all three parts of this assignment will be
 writing code that creates _spike count vectors_. These will be vectors of size
 $$Nx1$$, where $$N$$ is the total number of neurons (i.e., 190). All of the
 classification will be on these vectors, and you should combine across neurons
