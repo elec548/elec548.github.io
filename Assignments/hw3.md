@@ -25,9 +25,10 @@ ReachData = np.load('ReachData.npz')
 
 print(ReachData.files)
 
-r = ReachData['r']
-
+### to find out the fields of a Python structure/dictionary, the command "dir" is useful
+print(dir(ReachData))
 ```
+
 Each element in the array contains data on one trial. Time stamps for
 each spike in trial i and neuron j are given in r(i).unit(j).spikeTimes (in ms
 relative to trial start). Other relevant members of the structure for this
@@ -36,8 +37,20 @@ and movement planning nominally begins), r(i).timeGoCue (the time the animal is
 cued to move and planning nominally ends), r(i).timeTargetAcquire (the time
 movement ends). 
 
+Here's some code to convert the "r" structure to more normal Python/numpy format:
 ```
+r = ReachData['r']
 
+spikeTimes = [] # This will be a list across trials of a list across units of np arrays of spike times 
+timeTouchHeld = []
+timeGoCue = []
+timeTargetAcquire = []
+for trial in r:
+    spikeTimes.append([u.spikeTimes if type(u.spikeTimes) is np.ndarray \
+                           else np.array([u.spikeTimes]) for u in trial.unit])
+    timeTouchHeld.append(trial.timeTouchHeld)
+    timeGoCue.append(trial.timeGoCue)
+    TimetimeTargetAcquireMovementEnds.append(trial.timeTargetAcquire)
 ```
 
 A big part of all three parts of this assignment will be
@@ -56,7 +69,14 @@ in the vector `cfr`.
    Define two windows of spikes, the “plan window” encompassing spikes which were emitted between
    target onset and the go cue, and the “movement window” encompassing spikes which were emitted
    between the go cue and the time movement ends (note that both types of window are of different
-   length for different trials). Randomly choose 50 trials per target to be a set of training data
+   length for different trials). Here is example code to find the array of spikes in the plan window:
+   ```
+planSpikes = []
+for trialIdx, trialSpikes in enumerate(spikeTimes):
+    planSpikes.append([np.sum((st > timeTouchHeld[trialIdx]) & (st < timeGoCue[trialIdx])) for st in trialSpikes])
+planSpikes = np.array(planSpikes)
+   ```
+   Randomly choose 50 trials per target to be a set of training data
    (400 trials total). The remaining trials will be used for testing (“test data”). We can
    describe the number of spikes that a neuron produces in each window (vector of neural counts as
    $$\mathbf{n}_{plan}$$ and $$\mathbf{n}_{move}$$, where $$\mathbf{n} \in \mathbb{R}^N$$,
@@ -70,6 +90,7 @@ in the vector `cfr`.
    decoding accuracy (i.e., what fraction of trials are decoded correctly) using only the data
    in the plan window? Using only data in the movement window?  Combining plan and movement
    data?
+
 
 
 2. _Amount of plan data (40 pts)_
