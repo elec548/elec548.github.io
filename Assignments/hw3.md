@@ -74,7 +74,7 @@ in the vector `cfr`.
 planSpikes = []
 for trialIdx, trialSpikes in enumerate(spikeTimes):
     planSpikes.append([np.sum((st > timeTouchHeld[trialIdx]) & (st < timeGoCue[trialIdx])) for st in trialSpikes])
-planSpikes = np.array(planSpikes)
+planSpikes = np.array(planSpikes) # will be 1127 x 190 (number of trials by number of neurons)
    ```
    Randomly choose 50 trials per target to be a set of training data
    (400 trials total). The remaining trials will be used for testing (“test data”). We can
