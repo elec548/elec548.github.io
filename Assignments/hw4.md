@@ -64,6 +64,7 @@ and the recorded portion of the action potential waveform ("snippet") is in a
     list or numpy array (`Peaks`), the following code can be useful:
 
    ```python
+   import pandas as pd
    import seaborn as sns
    PP = pd.DataFrame(np.array(Peaks))
    g = sns.PairGrid(PP)
