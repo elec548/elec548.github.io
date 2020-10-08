@@ -5,8 +5,8 @@ title: Homework 4
 
 ## Homework 4 (100 pts)
 
-_This problem set is due Wednesday (10/30/2019) at 11:59pm. Please turn in your
-work by uploading to Canvas. f you have questions, please post them on the
+_This problem set is due Wednesday (10/19/2020) at 11:59pm. Please turn in your
+work by uploading to Canvas. If you have questions, please post them on the
 course forum, rather than emailing the course staff. This will allow other
 students with the same question to see the response and any ensuing discussion.
 The goal of this problem set is to review clustering through the process of
@@ -51,12 +51,17 @@ and the recorded portion of the action potential waveform ("snippet") is in a
     Find the peak amplitude (post-threshold) of each snippet on each channel. If
     you look at some waveforms, you'll see that the peak typically happens
     within 5-10 data points of the threshold crossing (later peaks are noise!).
-    Make a 6 subplot figure showing a point in each panel for each detected
-    action potential. The point should be the peak amplitude on channel A vs the
-    peak amplitude on channel B, where A and B are the combinatorial pairs
-    within {1; 2; 3; 4} (i.e., 1 vs. 2, 1 vs. 3, etc.). Once you have found the
-    snippet peaks as a list or numpy array (`Peaks`), the following code can
-    be useful:
+    Search for peaks that are between timepoint 5 and timepoint 25. If you are
+    new to NumPy, the function `np.argmax()` is a good place to start! You can
+    choose whether to find the index of the snippet of the peak across all 4 
+    channels independently, or jointly (e.g., averaging the 4 channels, finding
+    the peak of the averaged waveforms, and then extracting the 4-D value at
+    the resulting index).  Make a 6 subplot figure (like the one shown in the
+    lecture) showing a point in each panel for each detected action potential.
+    The point should be the peak amplitude on channel A vs the peak amplitude
+    on channel B, where A and B are the combinatorial pairs within {1; 2; 3; 4}
+    (i.e., 1 vs. 2, 1 vs. 3, etc.). Once you have found the snippet peaks as a
+    list or numpy array (`Peaks`), the following code can be useful:
 
    ```python
    import seaborn as sns
