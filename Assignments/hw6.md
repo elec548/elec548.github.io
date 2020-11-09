@@ -5,7 +5,7 @@ title: Homework 6
 
 ## Homework 6 (100 pts)
 
-_This problem set is due 11/18/2019. Please turn in your work by uploading to Canvas. If you
+_This problem set is due 11/23/2020. Please turn in your work by uploading to Canvas. If you
 have questions, please post them on the course forum, rather than emailing the course staff.
 This will allow other students with the same question to see the response and any ensuing
 discussion.  The goal of this problem set is to review Kalman filtering (continuous time latent
@@ -49,18 +49,7 @@ prior model of animal movement.
       $$x$$? What are the first and second derivatives of the log likelihood with
       respect to $$x$$? 
 
-      Now, consider two situations. 
-
-      **(ii.)** In the first situation, let's assume that $$g(x)$$ is
-      the same for each neuron, and that $$N$$ (the number of neurons) is large. What 
-      conditions on $$g(x)$$ would imply that the log likelihood was concave (i.e.,
-      the second derivative was negative everywhere)? Hint: make use of the weak law
-      of large numbers, for independent identically distributed $$x_n$$, 
-      $$\frac{\sum_{n=1}^N x_n}{N} \approx \mu$$, where $$\mu$$ is the mean of the
-      $$x_n$$ (and remember what the mean of a Poisson process is!). Specifically,
-      make the large numbers substitution **before** taking any derivatives!
-
-      **(iii.)** In the second situation, answer this question: what conditions on g(x) would
+      **(ii.)** What conditions on g(x) would
       ensure that $$e^{-g(x)}$$ is both convex and log-concave (i.e., $$log(e^{-g(x)})$$
       is concave)? These constraints come from 
       ["Maximum likelihood estimation of cascade point-process neural encoding models"](https://www.tandfonline.com/doi/abs/10.1088/0954-898X_15_4_002).
