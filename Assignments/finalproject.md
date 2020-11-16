@@ -42,11 +42,15 @@ using one of the techniques from the class on a topic of their own interest
   - [Yu et al 2009 "Gaussian-process factor analysis for low-dimensional single-trial analysis of neural population activity."](FinalProject/Yu2009.pdf)
   - [Churland et al 2012 "Neural population dynamics during reaching" (specifically jPCA, e.g., Figure 3)](https://www.nature.com/articles/nature11129)
   - More ideas here: [Cunningham and Yu "Dimensionality reduction for large-scale neural recordings"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4433019/)
+  - [Wu et al 2017 "Gaussian process based nonlinear latent structurediscovery in multivariate spike train data."'(https://pillowlab.princeton.edu/pubs/Wu17_PoissGPLVM_nips.pdf)
+  - [Pandarinath et al 2018 "Inferring single-trial neural population dynamics using sequential auto-encoders."](https://www.nature.com/articles/s41592-018-0109-9)
 
 ### Continuous decoding
   - [Kemere and Meng 2005 "Optimal estimation of feed-foward-controlled linear systems"](FinalProject/Kemere2005.pdf)
   - [Wu et al 2004 "Modeling and decoding motor cortical activity using a switching Kalman filter."](FinalProject/Wu2004.pdf)
   - [Brown et al 1998 "A statistical paradigm for neural spike train decoding applied to position prediction from ensemble firing patterns of rat hippocampal place cells."](FinalProject/Brown1998.pdf)
+  - [Quang et al 2015 "The Kalman Laplace filter: A new deterministic algorithm for nonlinear Bayesian filtering"](https://ieeexplore.ieee.org/abstract/document/7266743)
 
 ### Hidden Markov models
   - [Maboudi at al "Uncovering temporal structure in hippocampal output patterns"](https://elifesciences.org/articles/34467)
+  - [Kemere et al 2008 "Detecting Neural-State Transitions Using Hidden Markov Models for Motor Cortical Prostheses"](https://journals.physiology.org/doi/full/10.1152/jn.00924.2007)
