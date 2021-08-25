@@ -4,7 +4,7 @@ title: ELEC548 - Syllabus
 group: navigation
 ---
 
-# _ELEC 548 / 483 Syllabus - 2020_
+# _ELEC 548 / 483 Syllabus - 2021_
 
 This course covers advanced statistical signal processing and machine learning approaches for
 modern neuroscience data (primarily many-channel spike trains).  Topics include latent variable
@@ -14,19 +14,20 @@ sorting, decoding, characterization of neural systems, and field potential analy
 
 ## Instructor: [Caleb Kemere](http://rnel.rice.edu/people/calebkemere)
 
-## Graders: [TBD]()
+## Graders: [Della Lu]()
 
 ## Location: BRC284
 
-## Time: Tuesdays/Thursdays 9:40-11 AM
+## Time: Tuesdays/Thursdays 10:50 - 12:05 AM
 
 ## Prerequisites: 
-Basic circuits (ELEC 242 or equivalent), Probability (ELEC 303 or equivalent), Linear algebra
-(Math 355 or equivalent), Python will be used for many of the homework assignments so some
-familiarity with scientific program is critical. While we will introduce a variety of machine
-learning topics in class, students may find prior knowledge of machine learning concepts (e.g.,
-ELEC475, ELEC476, STAT413 and/or COMP540) helpful.
-
+  + Probability (ELEC 303 or equivalent), 
+  + Linear algebra (Math 355 or equivalent), 
+  + Python will be used for many of the homework assignments so some familiarity with
+  scientific programming is critical. 
+  + **New for 2021** ELEC 478 - Intro to Machine Learning - or equivalent. (key topics: Classifiers,
+  Clustering, Dimensionality Reduction)
+  
 ## Objective:
 Students should learn the fundamentals of how the activity of neurons represents information
 within in the brain, how this activity can be monitored experimentally, and how to decode
@@ -49,10 +50,9 @@ Students completing the course should be able to:
 
 ## Grading:
 Class grade will be based on homework assignments and the final project. You are welcome to
-work on homework in groups. However, for 1 assignments of your choice (not including the
-first), you must be responsible for a significant majority of the content and include a
-statement to that effect. Students enrolled in 483 may work on their final projects in groups,
-but students enrolled in 548 are expected to work on them independently.
+work on homework in groups. Students enrolled in 483 may work on their final projects in groups,
+but students enrolled in 548 are expected to work on them independently. **NOTE: The grading
+may be updated over the course of the semester.**
 
   + 6-8 ~weekly homework assignments (70%)
   + final project (30%) (students enrolled in 483 may do final project as a team)
