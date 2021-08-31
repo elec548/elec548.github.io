@@ -5,15 +5,14 @@ title: Homework 1
 
 ## Homework 1
 
-_This problem set is due Friday (9/11/2020) at 11:58 pm. Please turn in your work by uploading to
-Canvas. Preferably, I'd love to see it turned in as a Jupyter notebook with code
-shown for problem 5! If you have questions, please post them on the course
-forum, rather than emailing the course staff. This will allow other students
-with the same question to see the response and any ensuing discussion. The first goal
-of this problem set is to review the concept that complex operations involve
-distributed action in the brain and to think about how best we can understand
-the process of cortical computaiton. The second goal is to review molecular
-neurobiology._
+_This problem set is due Tuesday (9/8/2021) at 11:58 pm. Please turn in your
+work by uploading to Canvas. If you have questions, please post them on the
+course forum, rather than emailing the course staff. This will allow other
+students with the same question to see the response and any ensuing discussion.
+The first goal of this problem set is to review the concept that complex
+operations involve distributed action in the brain and to think about how best
+we can understand the process of cortical computaiton. The second goal is to
+review molecular neurobiology._
 
 1. _Organization of the brain - short answer (a few sentences, 5 pts)_
    In the 1860s, Pierre Paul Broca described how patients with lesions in the posterior left
@@ -37,7 +36,7 @@ neurobiology._
    2016](http://www.pnas.org/content/113/27/7337)
    [(PDF)](../Resources/PNAS-2016-Hawrylycz-7337-44.pdf).  
    
-   In the mammal, what are the primary three regions in which visual input is processed? Which
+   In the mammal, what "big picture" three regions of neurons process visual input? Which
    is the most complex? How many different kinds of neurons are there in mouse visual cortex? 
    
    The "overarching goal of Mindscope is to understand the operations and the flexibility of
@@ -47,18 +46,31 @@ neurobiology._
    goal?
 
 4. _Distributed Functions (10 pts)_  Watch the Neuralink "Progress Update"
-[https://www.youtube.com/watch?v=DVvmgjBL74w](https://www.youtube.com/watch?v=DVvmgjBL74w).
-What examples of applications of their technology would be made challenging by
-the distributed aspects of some mental processes?
+   [https://www.youtube.com/watch?v=DVvmgjBL74w](https://www.youtube.com/watch?v=DVvmgjBL74w).
+   What examples of applications of their technology would be made challenging by
+   the distributed aspects of some mental processes?
 
-5. _Neurons and Glia (10 pts)_
+5. _Similarity of Function Across Species (10 pts)_ The Nobel Prize in 2014 was awarded for
+   the discovery of two different patterns of neural responses in memory-related regions of the brain.
+   Here is an overview: [https://www.sciencedirect.com/science/article/pii/S0896627314010903](https://www.sciencedirect.com/science/article/pii/S0896627314010903)
+   Recently, a similar pattern was observed in the brains of birds [http://science.sciencemag.org/content/373/6552/343.long](http://science.sciencemag.org/content/373/6552/343.long). 
+   
+   What is the name given to the receptive fields of this type of neural activity?
+   This activity was not observed in all types of birds. Why do the authors speculate this is?
+
+6. _Attention and Top-Down vs Bottom-Up (10 pts)_ View the double drift illusion here:
+   [https://www.sciencedirect.com/science/article/pii/S0960982219313739](https://www.sciencedirect.com/science/article/pii/S0960982219313739)
+   Why do you think your perception of the drift differs when you look at the fixation point
+   versus looking at the drift stimulus?
+   
+7. _Neurons and Glia (10 pts)_
 
    Our estimates of the numbers of neurons and glia in the brain have changed over time. (If
    your curious about the history of this, see [Bartheld et al, _J Comp Neuro_ 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5063692/).
    Glia now seem potentially less important than they once did. [This paper (Sherwood et al, _PNAS_ 2006](http://www.pnas.org/content/103/37/13606.short)
    suggests one reason why there are more glia per neuron in humans than other primates. What is it?
 
-6. _Membrane Potentials and the Nernst Equation (50 pts)_
+8. _Membrane Potentials and the Nernst Equation (40 pts)_
 
    Refer to _PNS_ Chapter 7 for an explanation of the Nernst and Goldman equations.
    As discussed in class, a neuron’s resting potential is determined by the relative intra- and
@@ -97,13 +109,8 @@ the distributed aspects of some mental processes?
      changing the permeability ratio. How might the cell recover the original resting membrane
      potential and calculate the new permeability ratio?  (10 pts)
 
-     **e.** Chapter 9 of _PNS_ describes the mechanisms of the action potential in detail.
-     In class, we briefly connected action potentials to membrane permeability. How do the relative
-     permeabilities of sodium and potasium change as an action potential is being generated?
-     Consider three phases - when the membrane potentail is below threshold, and after it crosses
-     threshold, after it begins to return (i.e., after the peak). (10 pts)
 
-7. _Synapses (30 pts)_
+9. _Synapses (10 pts)_
    
    Refer to _PNS_ Ch. 10 and Ch. 12 and the Lecture 3 slides.
      
@@ -118,18 +125,5 @@ the distributed aspects of some mental processes?
      reference - [Masland, _Nature Neuroscience_ 2001](https://www.nature.com/articles/nn0901-877)
      What kind of synapses do cones make onto bipolar cells? How do you think this affects
      vision.
-
-     **d.** (Hard - Not Scored) An important discovery was that synapses release neurotransmitter in
-     quanta, which we now know correspond to vesicles. As part of the development of the quantal
-     theory of neurotransmission, it was observed that the size of post-synaptic potentials
-     increased in steps that were the same size as "mini-PSCs", small post-synaptic currents
-     observed in the absence of an impinging action potential. Assume that you are investigating
-     plasticity in an excitatory synapse induced by some means. (i) If you see
-     an increase in the evoked EPSC (excitatory postsynaptic current) but the size of mini-EPSCs
-     remain constant, would you assume that the plasticity mechanism you are inducing is
-     pre-synaptic or post-synaptic? (ii) What if you observe an increase in the size of
-     mini-EPSCs? (iii) What is an example of a pre-synaptic plasticity mechanism that might lead
-     to larger EPSCs? What about a post-synaptic plasticity mechanism that would lead to larger
-     EPSCs?
 
 
