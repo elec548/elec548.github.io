@@ -43,7 +43,7 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Syllabus** -- [here](/syllabus.html)
 
-**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/bqy4qqfbtz65gvz/AAAqwqmDnJ4KBLsGoLxHP675a)
+**Lectures:** [link to dropbox folder](https://www.dropbox.com/sh/m81oeeuhazvkvtk/AAA1QNe-k9tE1C10Mp-G3SgBa)
 
 **Course Notes**
 

@@ -5,7 +5,7 @@ title: Homework 1
 
 ## Homework 1
 
-_This problem set is due Tuesday (9/8/2021) at 11:58 pm. Please turn in your
+_This problem set is due Tuesday (9/7/2021) at 11:58 pm. Please turn in your
 work by uploading to Canvas. If you have questions, please post them on the
 course forum, rather than emailing the course staff. This will allow other
 students with the same question to see the response and any ensuing discussion.
