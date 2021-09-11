@@ -5,7 +5,7 @@ title: Homework 2
 
 ## Homework 2 (120 pts)
 
-_This problem set is due Friday (9/18/2020) at 11:59 pm. Please turn in your
+_This problem set is due Tuesday (9/21/2021) at 11:59 pm. Please turn in your
 work by uploading to Canvas. f you have questions, please post them on the
 course forum, rather than emailing the course staff. This will allow other
 students with the same question to see the response and any ensuing discussion.
@@ -161,7 +161,7 @@ general and the Poisson process in particular._
      spikes during stimuli in the preferred direction. Compare this to the ISI
      distribution expected under a Poisson approximation.
 
-     **e.** (20 pts) For the neurons in part (c), use the [time-rescaling
+     **e.** (Extra Credit) For the neurons in part (c), use the [time-rescaling
      theorem](https://www.mitpressjournals.org/doi/abs/10.1162/08997660252741149)
      to renormalize the ISIs for all stimulus directions (i.e., assuming a
      piece-wise constant inhomogeneous Poisson process). Plot the resulting ISI
