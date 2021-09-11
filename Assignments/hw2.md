@@ -3,7 +3,7 @@ layout: mathjax
 title: Homework 2
 ---
 
-## Homework 2 (120 pts)
+## Homework 2 (140 pts)
 
 _This problem set is due Tuesday (9/21/2021) at 11:59 pm. Please turn in your
 work by uploading to Canvas. f you have questions, please post them on the
@@ -39,18 +39,20 @@ general and the Poisson process in particular._
    \frac{\lambda^x}{x!}$$, for $$x \in \lbrace 0, 1, 2, \ldots\rbrace$$ where $$\lambda > 0$$
    is the rate parameter. Derive the Maximum Likelihood Estimate of the rate parameter when
    given a series of observations $$D = \lbrace x_1, x_2, \ldots, x_N\rbrace$$. (Hint: solve
-   for the maximum of the log of the likelihood.)
+   for the maximum of the log of the likelihood, $$p(D \mid \lambda)$$.)
 
-   **b. (Bayesian parameter estimation)** Derive the posterior $$p(\lambda \mid D)$$ assuming a
-   conjugate prior $$p(\lambda) = \text{Ga}(\lambda \mid a, b) \propto \lambda^{a-1}
-   e^{-\lambda b}$$. Hint: the posterior is also a Gamma distribution!!
+   **b. (Bayesian parameter estimation and a "conjugate prior")** Derive the posterior $$p(\lambda
+   \mid D)$$ assuming a prior distribution $$p(\lambda) = \text{Ga}(\lambda \mid \alpha, \beta)
+   \propto \lambda^{\alpha-1} e^{-\lambda \beta}$$. Hint: the posterior is also a Gamma
+   distribution!! This is the definition of a "conjugate prior" - the posterior has the same form
+   (but with different parameters) as the prior.
 
    **c.** What does the posterior mean tend to as $$a \to 0$$ and $$b \to 0$$. Hint: Recall
-   that the mean of a $$\text{Ga}(a,b)$$ distribution is $$a/b$$. (So if you're doing a crazy
-   sum, you're doign it wrong.)
+   that the mean of a $$\text{Ga}(a,b)$$ distribution (defined as an integral) is $$a/b$$. (So if
+   you're doing a crazy sum, you're doing it wrong.)
 
 
-3. _Point Process Model Validation (30 pts)_
+3. _Point Process Model Validation (40 pts)_
 
    We can describe the number of spikes that a neuron produces in a one second
    window using a wide variety of random process models. Let’s refer to the
@@ -87,7 +89,7 @@ general and the Poisson process in particular._
      probability of, e.g., data from 1000 trials of the simulated data given one model or
      the other?_)
 
-     **b.** Now split the data into training and validation sets, use the training sets
+     **b.** (10 pts) Now split the data into training and validation sets, use the training sets
      to train a Gaussian model and a Poisson model, and use the validation set to assess which
      model fits the data best. (_Hint: You should use the maximum likelihood estimate for the
      parameters of the models, which will be the sample mean and variance of the training data
@@ -116,7 +118,7 @@ general and the Poisson process in particular._
      number of spikes in small bins of time will help explain your observations._)
 
 
-4. _Describing Real Data (60 pts)_
+4. _Describing Real Data (40 pts)_
 
    In this problem you are going to characterize the [neural activity recorded
    on a multielectrode array in visual cortex](#datasource), found in
