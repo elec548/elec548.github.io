@@ -47,7 +47,7 @@ general and the Poisson process in particular._
    distribution!! This is the definition of a "conjugate prior" - the posterior has the same form
    (but with different parameters) as the prior.
 
-   **c.** What does the posterior mean tend to as $$a \to 0$$ and $$b \to 0$$. Hint: Recall
+   **c.** What does the posterior mean tend to as $$\alpha \to 0$$ and $$\beta \to 0$$. Hint: Recall
    that the mean of a $$\text{Ga}(a,b)$$ distribution (defined as an integral) is $$a/b$$. (So if
    you're doing a crazy sum, you're doing it wrong.)
 
