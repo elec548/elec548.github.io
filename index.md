@@ -37,9 +37,9 @@ analysis. This course is open to students with no prior neurobiology coursework.
 
 **Location** -- BRC284
 
-**Time** -- Tuesdays/Thursdays 9:40-11 AM
+**Time** -- Tuesdays/Thursdays 10:50 AM - 12:05 PM
 
-**Canvas** -- [https://canvas.rice.edu/courses/32885](https://canvas.rice.edu/courses/32885)
+**Canvas** -- [https://canvas.rice.edu/courses/41372](https://canvas.rice.edu/courses/41372)
 
 **Syllabus** -- [here](/syllabus.html)
 
