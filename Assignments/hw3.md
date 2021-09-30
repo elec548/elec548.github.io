@@ -5,7 +5,7 @@ title: Homework 3
 
 ## Homework 5 (100 pts)
 
-_This problem set is due Monday (10/5/2020) at 11:59pm. Please turn in your
+_This problem set is due Tuesday (10/5/2021) at 11:59pm. Please turn in your
 work by uploading to Canvas. If you have questions, please post them on the
 course forum, rather than emailing the course staff. This will allow other
 students with the same question to see the response and any ensuing discussion.
@@ -89,7 +89,11 @@ planSpikes = np.array(planSpikes) # will be 1127 x 190 (number of trials by numb
    estimate the maximum likelihood reach target (do it in log space!). What is the overall
    decoding accuracy (i.e., what fraction of trials are decoded correctly) using only the data
    in the plan window? Using only data in the movement window?  Combining plan and movement
-   data?
+   data? **BEWARE** if you are getting best decoding numbers below 90% you probably have not
+   properly calculated **rates** or properly applied the **rates** to the right duration
+   windows for each trial. Remember that a Poisson process is defined by $$\lambda * T$$!
+   **BEWARE #2** If you have estimated a rate = 0 for a particular reach direction, this
+   will likely cause problems. Be pseudo-Bayesian - replace the 0s with a small number!
 
 
 
