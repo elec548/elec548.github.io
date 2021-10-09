@@ -5,7 +5,7 @@ title: Homework 4
 
 ## Homework 4 (100 pts)
 
-_This problem set is due Wednesday (10/19/2020) at 11:59pm. Please turn in your
+_This problem set is due Tuesday (10/19/2021) at 11:59pm. Please turn in your
 work by uploading to Canvas. If you have questions, please post them on the
 course forum, rather than emailing the course staff. This will allow other
 students with the same question to see the response and any ensuing discussion.
@@ -14,7 +14,7 @@ spike sorting action potentials data. You should submit both commented code and
 a write-up for this homework assignment._
 
 
-### Description of data set
+### Description of the first data set
 The dataset for this problem is linked in the numpy file
 [SpikeData05.npz](SpikeData05.npz) ([SpikeData05.mat](SpikeData05.mat)), which
 contains numpy arrays `SpikeWaveforms` and ~~`RawData`~~. (The raw data was too
@@ -225,3 +225,34 @@ and the recorded portion of the action potential waveform ("snippet") is in a
     **c.** Train models with a full covariance matrix as in **(a)** and a diagonal covariance
     matrix (use the `covariance_type='diagonal'` option). Compare the model likelihoods on test
     data. Which model does a better job?
+
+
+5. _Clustering using Pearson Correlation (50 pts)_
+
+    This problem replicates a result from the paper "Sub-second dynamics of theta-gamma coupling in
+    hippocampal CA1" by Zhang et al
+    (https://elifesciences.org/articles/44320)[https://elifesciences.org/articles/44320]. They
+    calculated the spectrograms of their LFP data and extracted individual theta cycles. They then
+    clustered these spectrograms to assess whether higher frequency gamma oscillations
+    preferentially occur at certain phases of theta.
+
+    The data you are given are a series of matrices of size $$K x N_{\theta}$$, where K is and
+    $$N_{\theta}$$, the number of phase bins, is . Your job is to replciate their analysis.
+
+    They use a distance measure derived from the Pearson correlation, specificially
+    $$d(x,y) = 1 - \rho(x,y)$$. As shown in this paper,
+    (https://ieeexplore.ieee.org/abstract/document/6739991)[https://ieeexplore.ieee.org/abstract/document/6739991],
+    clustering with Pearson correlation distance is equivalent to using K-means on normalized data,
+    $$\tilde{x} = \frac{x - \bar{x}}{\sigma_x}$$, where $$\bar{x}$$ is the mean of the data point
+    $$x$$ (across its dimensions) and $$\sigma_x$$ is its standard deviation.
+
+    **a.** Cluster the theta cycle spectrograms into K=4 clusters. Plot the mean spectrogram of
+    each cluster as in their Figure 1D.
+
+    **b.** Find 3 data points (i.e., theta cycles) which are close to the centroid of each cluster
+    and plot them.  How similar do invidivual cycles look to the averages?
+    
+    **c.** Find 3 data points which are close to the boundaries of two or more of the different
+    clusters. (You can do this by finding the distances to each cluster center, and sorting the data
+    points by how close they are!) Plot these examples. Give a qualitative description.
+
