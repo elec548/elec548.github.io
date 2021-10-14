@@ -231,20 +231,46 @@ and the recorded portion of the action potential waveform ("snippet") is in a
 
     This problem replicates a result from the paper "Sub-second dynamics of theta-gamma coupling in
     hippocampal CA1" by Zhang et al
-    (https://elifesciences.org/articles/44320)[https://elifesciences.org/articles/44320]. They
+    [https://elifesciences.org/articles/44320](https://elifesciences.org/articles/44320). They
     calculated the spectrograms of their LFP data and extracted individual theta cycles. They then
     clustered these spectrograms to assess whether higher frequency gamma oscillations
     preferentially occur at certain phases of theta.
 
-    The data you are given are a series of matrices of size $$K x N_{\theta}$$, where K is and
-    $$N_{\theta}$$, the number of phase bins, is . Your job is to replciate their analysis.
+    The data for this problem can be found [here](hw4problem5.npy). You can load it as:
+    ```
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    data = np.load('hw4problem5.npy')
+    plt.imshow(data[0,:,:])
+    ```
+    The data you are given are a series of matrices of size $$K$$ x $$N_{\theta}$$, where K is 81 and
+    $$N_{\theta}$$, the number of phase bins, is 20. The phase goes from $$-\pi$$ to $$\pi$$
+    (i.e., `phase = np.linspace(-np.pi, np.pi, 20)`, and the frequency vector can be calculated as
+    `freqs = np.arange(20, 182, 2)[::-1]`.  Note that in the frequency vector and the data, the 0-th
+    entry corresponds to the highest frequency (180 Hz).  This is so that plotting with `imshow()`
+    works nicely.
+
+    Your job is to replicate their analysis.
 
     They use a distance measure derived from the Pearson correlation, specificially
     $$d(x,y) = 1 - \rho(x,y)$$. As shown in this paper,
-    (https://ieeexplore.ieee.org/abstract/document/6739991)[https://ieeexplore.ieee.org/abstract/document/6739991],
+    [https://ieeexplore.ieee.org/abstract/document/6739991](https://ieeexplore.ieee.org/abstract/document/6739991),
     clustering with Pearson correlation distance is equivalent to using K-means on normalized data,
     $$\tilde{x} = \frac{x - \bar{x}}{\sigma_x}$$, where $$\bar{x}$$ is the mean of the data point
     $$x$$ (across its dimensions) and $$\sigma_x$$ is its standard deviation.
+
+    To cluster, you can use your K-means implementation or the scikit-learn one. Assuming you've
+    created a matrix `normdata`, which is normalized properly, here's some example code that works.
+    ```
+    from sklearn.cluster import KMeans
+    K = 4
+    ndata = np.reshape(normdata, (normdata.shape[0], normdata.shape[1] * normdata.shape[2]))
+    kmeans = KMeans(n_clusters=K, random_state=0, algorithm="full").fit(ndata)
+
+    cluster0 = np.reshape(kmeans.cluster_centers_[0,:], (normdata.shape[1], normdata.shape[2]))
+    plt.imshow(cluster0)
+    ```
 
     **a.** Cluster the theta cycle spectrograms into K=4 clusters. Plot the mean spectrogram of
     each cluster as in their Figure 1D.
