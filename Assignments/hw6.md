@@ -5,7 +5,7 @@ title: Homework 6
 
 ## Homework 6 (100 pts)
 
-_This problem set is due 11/23/2020. Please turn in your work by uploading to Canvas. If you
+_This problem set is due 11/30/2021. Please turn in your work by uploading to Canvas. If you
 have questions, please post them on the course forum, rather than emailing the course staff.
 This will allow other students with the same question to see the response and any ensuing
 discussion.  The goal of this problem set is to review Kalman filtering (continuous time latent
